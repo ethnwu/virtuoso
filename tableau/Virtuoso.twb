@@ -59,7 +59,7 @@
       <column name="[Model Version]" datatype="string" role="dimension" type="nominal" />
       <column name="[Scope Note]" datatype="string" role="dimension" type="nominal" />
       <column name="[Expert Grade]" datatype="string" role="dimension" type="nominal" />
-      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+      <layout dim-ordering="alphabetic" dim-percentage="0.5" measure-ordering="alphabetic" measure-percentage="0.5" show-structure="true" />
     </datasource>
     <datasource caption="Virtuoso — features" inline="true" name="features" version="18.1">
       <connection class="textscan" directory="Data" filename="features.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
@@ -91,7 +91,7 @@
       <column name="[Feature Score]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <column name="[Weight]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <column name="[Weighted Contribution]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
-      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+      <layout dim-ordering="alphabetic" dim-percentage="0.5" measure-ordering="alphabetic" measure-percentage="0.5" show-structure="true" />
     </datasource>
     <datasource caption="Virtuoso — ratings" inline="true" name="ratings" version="18.1">
       <connection class="textscan" directory="Data" filename="ratings_tableau.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
@@ -121,7 +121,7 @@
       <column name="[Source Locator]" datatype="string" role="dimension" type="nominal" />
       <column name="[Review Status]" datatype="string" role="dimension" type="nominal" />
       <column name="[Performance Conditions]" datatype="string" role="dimension" type="nominal" />
-      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+      <layout dim-ordering="alphabetic" dim-percentage="0.5" measure-ordering="alphabetic" measure-percentage="0.5" show-structure="true" />
     </datasource>
     <datasource caption="Virtuoso — repertoire" inline="true" name="repertoire" version="18.1">
       <connection class="textscan" directory="Data" filename="known_repertoire.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
@@ -153,7 +153,7 @@
       <column name="[Source Locator]" datatype="string" role="dimension" type="nominal" />
       <column name="[Conditions]" datatype="string" role="dimension" type="nominal" />
       <column name="[Retrieved]" datatype="string" role="dimension" type="nominal" />
-      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+      <layout dim-ordering="alphabetic" dim-percentage="0.5" measure-ordering="alphabetic" measure-percentage="0.5" show-structure="true" />
     </datasource>
   </datasources>
   <worksheets>
@@ -203,7 +203,6 @@
         <rows>[pieces].[none:Piece:nk]</rows>
         <cols>[pieces].[sum:Virtuoso Index:qk]</cols>
       </table>
-      <simple-id uuid="{EF0F852A-D8DB-5384-8738-CF6FCE0BAD76}" />
     </worksheet>
     <worksheet name="02 — Density versus chord frequency">
       <layout-options>
@@ -257,7 +256,6 @@
         <rows>[pieces].[sum:Chord Onsets Pct:qk]</rows>
         <cols>[pieces].[sum:Notes per Quarter:qk]</cols>
       </table>
-      <simple-id uuid="{5C904C4F-13EB-59E9-9988-3AD0EB0EEEFC}" />
     </worksheet>
     <worksheet name="03 — Technical profiles">
       <layout-options>
@@ -308,7 +306,6 @@
         <rows>[features].[none:Piece:nk]</rows>
         <cols>[features].[none:Feature:nk]</cols>
       </table>
-      <simple-id uuid="{4F110753-C5EA-55AB-98AE-896AF328EA97}" />
     </worksheet>
     <worksheet name="04 — Pitch range">
       <layout-options>
@@ -356,7 +353,6 @@
         <rows>[pieces].[none:Piece:nk]</rows>
         <cols>[pieces].[sum:Highest MIDI:qk]</cols>
       </table>
-      <simple-id uuid="{F97F6EAB-51AA-5AE8-B8D9-E8D43A2BBC20}" />
     </worksheet>
     <worksheet name="05 — Published ratings">
       <layout-options>
@@ -406,7 +402,6 @@
         <rows>[ratings].[none:Scheme:nk] / [ratings].[none:Target:nk]</rows>
         <cols />
       </table>
-      <simple-id uuid="{E781EFED-1FF2-59CE-ACE9-4EB3C7AD248B}" />
     </worksheet>
     <worksheet name="06 — Expanded concerto repertoire">
       <layout-options>
@@ -460,7 +455,6 @@
         <rows>[repertoire].[none:Composer:nk] / [repertoire].[none:Work:nk] / [repertoire].[none:Rating:nk] / [repertoire].[none:Scope:nk]</rows>
         <cols />
       </table>
-      <simple-id uuid="{983404EC-050D-5F10-8ADC-2B5A7CAB9BCC}" />
     </worksheet>
   </worksheets>
   <dashboards>
@@ -501,37 +495,156 @@
           </zone>
         </zone>
       </zones>
-      <simple-id uuid="{B420DD26-35F9-59C4-876F-D539A27C0A7E}" />
     </dashboard>
   </dashboards>
   <windows saved-dpi-scale-factor="1.0" source-height="1000">
     <window class="worksheet" name="01 — Technical demand index">
-      <viewpoint name="01 — Technical demand index">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages" />
+            <card type="filters" />
+            <card type="marks" />
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="2147483647">
+            <card type="columns" />
+          </strip>
+          <strip size="2147483647">
+            <card type="rows" />
+          </strip>
+          <strip size="30">
+            <card type="title" />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
         <zoom type="entire-view" />
       </viewpoint>
     </window>
     <window class="worksheet" name="02 — Density versus chord frequency">
-      <viewpoint name="02 — Density versus chord frequency">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages" />
+            <card type="filters" />
+            <card type="marks" />
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="2147483647">
+            <card type="columns" />
+          </strip>
+          <strip size="2147483647">
+            <card type="rows" />
+          </strip>
+          <strip size="30">
+            <card type="title" />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
         <zoom type="entire-view" />
       </viewpoint>
     </window>
     <window class="worksheet" name="03 — Technical profiles">
-      <viewpoint name="03 — Technical profiles">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages" />
+            <card type="filters" />
+            <card type="marks" />
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="2147483647">
+            <card type="columns" />
+          </strip>
+          <strip size="2147483647">
+            <card type="rows" />
+          </strip>
+          <strip size="30">
+            <card type="title" />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
         <zoom type="entire-view" />
       </viewpoint>
     </window>
     <window class="worksheet" name="04 — Pitch range">
-      <viewpoint name="04 — Pitch range">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages" />
+            <card type="filters" />
+            <card type="marks" />
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="2147483647">
+            <card type="columns" />
+          </strip>
+          <strip size="2147483647">
+            <card type="rows" />
+          </strip>
+          <strip size="30">
+            <card type="title" />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
         <zoom type="entire-view" />
       </viewpoint>
     </window>
     <window class="worksheet" name="05 — Published ratings">
-      <viewpoint name="05 — Published ratings">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages" />
+            <card type="filters" />
+            <card type="marks" />
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="2147483647">
+            <card type="columns" />
+          </strip>
+          <strip size="2147483647">
+            <card type="rows" />
+          </strip>
+          <strip size="30">
+            <card type="title" />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
         <zoom type="entire-view" />
       </viewpoint>
     </window>
     <window class="worksheet" name="06 — Expanded concerto repertoire">
-      <viewpoint name="06 — Expanded concerto repertoire">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages" />
+            <card type="filters" />
+            <card type="marks" />
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="2147483647">
+            <card type="columns" />
+          </strip>
+          <strip size="2147483647">
+            <card type="rows" />
+          </strip>
+          <strip size="30">
+            <card type="title" />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
         <zoom type="entire-view" />
       </viewpoint>
     </window>

@@ -1,7 +1,7 @@
 # Tableau build and portfolio guide
 
 ## Generated starter
-Open `tableau/Virtuoso.twbx` in Tableau Public on Mac. This starter contains a landscape dashboard and five editable worksheets. Application-level opening and rendering have not been verified here. The standalone `.twb` uses the two adjacent CSV sources in `tableau/Data`.
+Open `tableau/Virtuoso.twbx` in Tableau Public on Mac. This starter contains a landscape dashboard and six editable worksheets. Application-level opening and rendering have not been verified here. The compatibility repair adds required layout percentages, removes unsupported simple-id elements, and restores worksheet cards before viewpoints. Download and open the packaged `.twbx`, which includes all four CSV sources. The standalone `.twb` uses the four adjacent CSV sources in `tableau/Data`.
 
 ## Reliable manual fallback or rebuild
 Connect to `data/pieces.csv` as a text file. Treat Piece ID, Piece, Composer, Work, Source URL, License, and Model Version as dimensions. Keep Movement Order as a dimension when sorting.

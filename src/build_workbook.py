@@ -3,7 +3,7 @@ Generated XML is structurally checked; opening in Tableau is a separate QA step.
 """
 from pathlib import Path
 import xml.etree.ElementTree as E
-import csv, zipfile, uuid, shutil, json
+import csv, zipfile, shutil, json
 ROOT=Path(__file__).resolve().parents[1]
 def sub(p,tag,text=None,**attrs):
     el=E.SubElement(p,tag,{k.rstrip('_').replace('__','-'):str(v) for k,v in attrs.items()})
@@ -35,7 +35,7 @@ for name,file in [('pieces','pieces.csv'),('features','features.csv'),('ratings'
     for f in fields[name]:
         c=col(ds,f)
         if f in NUM: c.set('default-format','n0.0')
-    sub(ds,'layout',**{'dim-ordering':'alphabetic','measure-ordering':'alphabetic','show-structure':'true'})
+    sub(ds,'layout',**{'dim-ordering':'alphabetic','dim-percentage':'0.5','measure-ordering':'alphabetic','measure-percentage':'0.5','show-structure':'true'})
 works=sub(w,'worksheets')
 def sheet(name,ds,rows,cols,mark,encodings):
     s=sub(works,'worksheet',name=name)
@@ -54,7 +54,6 @@ def sheet(name,ds,rows,cols,mark,encodings):
     st=sub(pane,'style');r=sub(st,'style-rule',element='mark');sub(r,'format',attr='color',value='#97602e');sub(r,'format',attr='mark-labels-show',value='true')
     sub(t,'rows',' / '.join(f'[{ds}].{ins[f]}' for f in rows))
     sub(t,'cols',' / '.join(f'[{ds}].{ins[f]}' for f in cols))
-    sub(s,'simple-id',uuid='{'+str(uuid.uuid5(uuid.NAMESPACE_URL,'virtuoso/'+name)).upper()+'}')
     return s
 sheet('01 — Technical demand index','pieces',['Piece'],['Virtuoso Index'],'Bar',[('text','Virtuoso Index')])
 sheet('02 — Density versus chord frequency','pieces',['Chord Onsets Pct'],['Notes per Quarter'],'Circle',[('lod','Piece'),('text','Piece'),('size','Virtuoso Index')])
@@ -71,10 +70,16 @@ for i,(name,x,y,ww,hh) in enumerate([('01 — Technical demand index',1500,11000
     z=sub(root,'zone',id=i,name=name,x=x,y=y,w=ww,h=hh);zs=sub(z,'zone-style');sub(zs,'format',attr='margin',value=10);sub(zs,'format',attr='border-style',value='none')
 tz=sub(root,'zone',id=5,type__v2='text',x=1500,y=92000,w=97000,h=6500)
 ft=sub(tz,'formatted-text');sub(ft,'run','Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project; individual attribution and licenses in the source data.',fontname='Avenir Next',fontsize=10)
-sub(d,'simple-id',uuid='{'+str(uuid.uuid5(uuid.NAMESPACE_URL,'virtuoso/dashboard')).upper()+'}')
 wins=sub(w,'windows',**{'saved-dpi-scale-factor':'1.0','source-height':'1000'})
 for name in ['01 — Technical demand index','02 — Density versus chord frequency','03 — Technical profiles','04 — Pitch range','05 — Published ratings','06 — Expanded concerto repertoire']:
-    win=sub(wins,'window',class_='worksheet',name=name);sub(win,'viewpoint',name=name).append(E.Element('zoom',{'type':'entire-view'}))
+    win=sub(wins,'window',class_='worksheet',name=name)
+    cards=sub(win,'cards')
+    left=sub(sub(cards,'edge',name='left'),'strip',size='160')
+    for kind in ['pages','filters','marks']: sub(left,'card',type=kind)
+    top=sub(cards,'edge',name='top')
+    for kind,size in [('columns','2147483647'),('rows','2147483647'),('title','30')]:
+        sub(sub(top,'strip',size=size),'card',type=kind)
+    sub(sub(win,'viewpoint'),'zoom',type='entire-view')
 win=sub(wins,'window',class_='dashboard',name='Virtuoso');vps=sub(win,'viewpoints')
 for name in ['01 — Technical demand index','02 — Density versus chord frequency','03 — Technical profiles']:
     sub(sub(vps,'viewpoint',name=name),'zoom',type='entire-view')
@@ -87,8 +92,17 @@ for f in ['pieces.csv','features.csv','ratings_tableau.csv','known_repertoire.cs
 with zipfile.ZipFile(out/'Virtuoso.twbx','w',zipfile.ZIP_DEFLATED) as z:
     z.write(p,'Virtuoso.twb')
     for f in ['pieces.csv','features.csv','ratings_tableau.csv','known_repertoire.csv']: z.write(ROOT/'data'/f,'Data/'+f)
+# Guard the compatibility defects reported by Tableau's workbook loader.
 # Structural checks do not substitute for Tableau application rendering.
 parsed=E.parse(p);assert len(parsed.findall('.//worksheet'))==6
+assert not parsed.findall('.//simple-id')
+for layout in parsed.findall('./datasources/datasource/layout'):
+    assert {'dim-percentage','measure-percentage'} <= layout.attrib.keys()
+for win in parsed.findall('./windows/window'):
+    if win.get('class') == 'worksheet':
+        assert [c.tag for c in win] == ['cards','viewpoint']
+        assert win.findall('./cards/edge/strip/card')
+        assert 'name' not in win.find('viewpoint').attrib
 for ds in parsed.findall('./datasources/datasource'):
     f=ds.find('connection').get('filename');assert (out/'Data'/f).exists()
 with zipfile.ZipFile(out/'Virtuoso.twbx') as z: assert z.testzip() is None
