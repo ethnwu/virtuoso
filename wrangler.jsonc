@@ -1,6 +1,9 @@
 {
   "name": "virtuoso",
   "compatibility_date": "2026-10-22",
+  "routes": [
+    { "pattern": "virtuoso.ethanwu.me", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./web",
     "not_found_handling": "single-page-application"
