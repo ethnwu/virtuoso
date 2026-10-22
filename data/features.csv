@@ -1,0 +1,33 @@
+Piece ID,Piece,Composer,Work,Movement Order,Feature,Feature Score,Weight,Weighted Contribution
+BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Density,64.5783,0.35,22.6024
+BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Chords,14.8551,0.3,4.4565
+BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Register,6.3433,0.2,1.2687
+BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Leaps,30.8824,0.15,4.6324
+BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Density,49.4792,0.35,17.3177
+BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Chords,0.0,0.3,0.0
+BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Register,5.7895,0.2,1.1579
+BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Leaps,40.1715,0.15,6.0257
+BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Density,24.8434,0.35,8.6952
+BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Chords,0.3516,0.3,0.1055
+BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Register,6.3025,0.2,1.2605
+BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Leaps,38.8302,0.15,5.8245
+BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Density,49.7396,0.35,17.4089
+BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Chords,0.0,0.3,0.0
+BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Register,6.7016,0.2,1.3403
+BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Leaps,25.2271,0.15,3.7841
+BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Density,33.8384,0.35,11.8434
+BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Chords,75.3425,0.3,22.6027
+BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Register,0.7463,0.2,0.1493
+BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Leaps,26.1494,0.15,3.9224
+BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Density,24.4281,0.35,8.5498
+BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Chords,0.0,0.3,0.0
+BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Register,1.3378,0.2,0.2676
+BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Leaps,32.2707,0.15,4.8406
+BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Density,24.4945,0.35,8.5731
+BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Chords,41.6667,0.3,12.5
+BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Register,8.2552,0.2,1.651
+BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Leaps,29.9957,0.15,4.4994
+BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Density,25.5064,0.35,8.9273
+BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Chords,3.3888,0.3,1.0166
+BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Register,5.0542,0.2,1.0108
+BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Leaps,34.7222,0.15,5.2083

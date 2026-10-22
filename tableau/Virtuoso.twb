@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='utf-8'?>
+<workbook original-version="18.1" source-build="2024.1.0 (20241.24.0314.1442)" source-platform="mac" version="18.1">
+  <document-format-change-manifest />
+  <preferences>
+    <preference name="ui.encoding.shelf.height" value="24" />
+  </preferences>
+  <datasources>
+    <datasource caption="Virtuoso — pieces" inline="true" name="pieces" version="18.1">
+      <connection class="textscan" directory="Data" filename="pieces.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
+        <relation name="pieces.csv" table="[pieces.csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," width="0">
+            <column name="Piece ID" datatype="string" ordinal="0" />
+            <column name="Piece" datatype="string" ordinal="1" />
+            <column name="Composer" datatype="string" ordinal="2" />
+            <column name="Work" datatype="string" ordinal="3" />
+            <column name="Movement Order" datatype="real" ordinal="4" />
+            <column name="Virtuoso Index" datatype="real" ordinal="5" />
+            <column name="Noteheads" datatype="real" ordinal="6" />
+            <column name="Onsets" datatype="real" ordinal="7" />
+            <column name="Quarter Beats" datatype="real" ordinal="8" />
+            <column name="Notes per Quarter" datatype="real" ordinal="9" />
+            <column name="Chord Onsets Pct" datatype="real" ordinal="10" />
+            <column name="High Notes Pct" datatype="real" ordinal="11" />
+            <column name="Mean Leap Semitones" datatype="real" ordinal="12" />
+            <column name="Lowest MIDI" datatype="real" ordinal="13" />
+            <column name="Highest MIDI" datatype="real" ordinal="14" />
+            <column name="Source URL" datatype="string" ordinal="15" />
+            <column name="License" datatype="string" ordinal="16" />
+            <column name="Model Version" datatype="string" ordinal="17" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column name="[Piece ID]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Work]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Movement Order]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Virtuoso Index]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Noteheads]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Onsets]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Quarter Beats]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Notes per Quarter]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Chord Onsets Pct]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[High Notes Pct]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Mean Leap Semitones]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Lowest MIDI]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Highest MIDI]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Source URL]" datatype="string" role="dimension" type="nominal" />
+      <column name="[License]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Model Version]" datatype="string" role="dimension" type="nominal" />
+      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+    </datasource>
+    <datasource caption="Virtuoso — features" inline="true" name="features" version="18.1">
+      <connection class="textscan" directory="Data" filename="features.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
+        <relation name="features.csv" table="[features.csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," width="0">
+            <column name="Piece ID" datatype="string" ordinal="0" />
+            <column name="Piece" datatype="string" ordinal="1" />
+            <column name="Composer" datatype="string" ordinal="2" />
+            <column name="Work" datatype="string" ordinal="3" />
+            <column name="Movement Order" datatype="real" ordinal="4" />
+            <column name="Feature" datatype="string" ordinal="5" />
+            <column name="Feature Score" datatype="real" ordinal="6" />
+            <column name="Weight" datatype="real" ordinal="7" />
+            <column name="Weighted Contribution" datatype="real" ordinal="8" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column name="[Piece ID]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Work]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Movement Order]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Feature]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Feature Score]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Weight]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <column name="[Weighted Contribution]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
+      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="01 — Technical demand index">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Avenir Next" fontsize="14" bold="true">01 — Technical demand index</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Virtuoso — pieces" name="pieces" />
+          </datasources>
+          <datasource-dependencies datasource="pieces">
+            <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Virtuoso Index]" datatype="real" role="measure" type="quantitative" />
+            <column-instance column="[Piece]" derivation="None" name="[none:Piece:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Virtuoso Index]" derivation="Sum" name="[sum:Virtuoso Index:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="worksheet">
+            <format attr="background-color" value="#fbf8f1" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[pieces].[sum:Virtuoso Index:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#97602e" />
+                <format attr="mark-labels-show" value="true" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[pieces].[none:Piece:nk]</rows>
+        <cols>[pieces].[sum:Virtuoso Index:qk]</cols>
+      </table>
+      <simple-id uuid="{EF0F852A-D8DB-5384-8738-CF6FCE0BAD76}" />
+    </worksheet>
+    <worksheet name="02 — Density versus chord frequency">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Avenir Next" fontsize="14" bold="true">02 — Density versus chord frequency</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Virtuoso — pieces" name="pieces" />
+          </datasources>
+          <datasource-dependencies datasource="pieces">
+            <column name="[Chord Onsets Pct]" datatype="real" role="measure" type="quantitative" />
+            <column name="[Notes per Quarter]" datatype="real" role="measure" type="quantitative" />
+            <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Virtuoso Index]" datatype="real" role="measure" type="quantitative" />
+            <column-instance column="[Chord Onsets Pct]" derivation="Sum" name="[sum:Chord Onsets Pct:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[Notes per Quarter]" derivation="Sum" name="[sum:Notes per Quarter:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[Piece]" derivation="None" name="[none:Piece:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Virtuoso Index]" derivation="Sum" name="[sum:Virtuoso Index:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="worksheet">
+            <format attr="background-color" value="#fbf8f1" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Circle" />
+            <encodings>
+              <lod column="[pieces].[none:Piece:nk]" />
+              <text column="[pieces].[none:Piece:nk]" />
+              <size column="[pieces].[sum:Virtuoso Index:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#97602e" />
+                <format attr="mark-labels-show" value="true" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[pieces].[sum:Chord Onsets Pct:qk]</rows>
+        <cols>[pieces].[sum:Notes per Quarter:qk]</cols>
+      </table>
+      <simple-id uuid="{5C904C4F-13EB-59E9-9988-3AD0EB0EEEFC}" />
+    </worksheet>
+    <worksheet name="03 — Technical profiles">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Avenir Next" fontsize="14" bold="true">03 — Technical profiles</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Virtuoso — features" name="features" />
+          </datasources>
+          <datasource-dependencies datasource="features">
+            <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Feature]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Feature Score]" datatype="real" role="measure" type="quantitative" />
+            <column-instance column="[Piece]" derivation="None" name="[none:Piece:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Feature]" derivation="None" name="[none:Feature:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Feature Score]" derivation="Sum" name="[sum:Feature Score:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="worksheet">
+            <format attr="background-color" value="#fbf8f1" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Square" />
+            <encodings>
+              <color column="[features].[sum:Feature Score:qk]" />
+              <text column="[features].[sum:Feature Score:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#97602e" />
+                <format attr="mark-labels-show" value="true" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[features].[none:Piece:nk]</rows>
+        <cols>[features].[none:Feature:nk]</cols>
+      </table>
+      <simple-id uuid="{4F110753-C5EA-55AB-98AE-896AF328EA97}" />
+    </worksheet>
+    <worksheet name="04 — Pitch range">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Avenir Next" fontsize="14" bold="true">04 — Pitch range</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Virtuoso — pieces" name="pieces" />
+          </datasources>
+          <datasource-dependencies datasource="pieces">
+            <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Highest MIDI]" datatype="real" role="measure" type="quantitative" />
+            <column-instance column="[Piece]" derivation="None" name="[none:Piece:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Highest MIDI]" derivation="Sum" name="[sum:Highest MIDI:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="worksheet">
+            <format attr="background-color" value="#fbf8f1" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[pieces].[sum:Highest MIDI:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#97602e" />
+                <format attr="mark-labels-show" value="true" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[pieces].[none:Piece:nk]</rows>
+        <cols>[pieces].[sum:Highest MIDI:qk]</cols>
+      </table>
+      <simple-id uuid="{F97F6EAB-51AA-5AE8-B8D9-E8D43A2BBC20}" />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="Virtuoso">
+      <style />
+      <size maxheight="900" maxwidth="1400" minheight="900" minwidth="1400" />
+      <zones>
+        <zone id="0" type-v2="layout-basic" x="0" y="0" w="100000" h="100000">
+          <zone id="1" type-v2="text" x="1500" y="1000" w="97000" h="12000">
+            <formatted-text>
+              <run fontname="Avenir Next" fontsize="27" bold="true" fontcolor="#24382c">VIRTUOSO  /  The data behind violin difficulty
+</run>
+              <run fontname="Avenir Next" fontsize="11" fontcolor="#59685c">Bach pilot · Eight movements · Experimental technical-demand index, not a validated difficulty grade</run>
+            </formatted-text>
+          </zone>
+          <zone id="2" name="01 — Technical demand index" x="1500" y="15000" w="47000" h="38000">
+            <zone-style>
+              <format attr="margin" value="10" />
+              <format attr="border-style" value="none" />
+            </zone-style>
+          </zone>
+          <zone id="3" name="02 — Density versus chord frequency" x="51000" y="15000" w="47500" h="38000">
+            <zone-style>
+              <format attr="margin" value="10" />
+              <format attr="border-style" value="none" />
+            </zone-style>
+          </zone>
+          <zone id="4" name="03 — Technical profiles" x="1500" y="55000" w="97000" h="35000">
+            <zone-style>
+              <format attr="margin" value="10" />
+              <format attr="border-style" value="none" />
+            </zone-style>
+          </zone>
+          <zone id="5" type-v2="text" x="1500" y="92000" w="97000" h="6500">
+            <formatted-text>
+              <run fontname="Avenir Next" fontsize="10">Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project / Erik Sandberg, public domain.</run>
+            </formatted-text>
+          </zone>
+        </zone>
+      </zones>
+      <simple-id uuid="{B420DD26-35F9-59C4-876F-D539A27C0A7E}" />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor="1.0" source-height="1000">
+    <window class="worksheet" name="01 — Technical demand index">
+      <viewpoint name="01 — Technical demand index">
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="02 — Density versus chord frequency">
+      <viewpoint name="02 — Density versus chord frequency">
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="03 — Technical profiles">
+      <viewpoint name="03 — Technical profiles">
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="04 — Pitch range">
+      <viewpoint name="04 — Pitch range">
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="dashboard" name="Virtuoso">
+      <viewpoints>
+        <viewpoint name="01 — Technical demand index">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="02 — Density versus chord frequency">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="03 — Technical profiles">
+          <zoom type="entire-view" />
+        </viewpoint>
+      </viewpoints>
+      <active id="-1" />
+    </window>
+  </windows>
+</workbook>

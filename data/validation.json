@@ -1,0 +1,8 @@
+{
+  "movements": 8,
+  "noteheads": 4001,
+  "features": 32,
+  "checks": "Index recomputation, bounds, unique IDs, note/onset counts passed",
+  "model_version": "0.1 exploratory",
+  "source": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=180"
+}
