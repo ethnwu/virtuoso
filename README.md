@@ -3,7 +3,7 @@
 
 Virtuoso is a browser-based violin score lab with a reproducible Python corpus and an editable Tableau workbook. Explore repertoire, compare technical fingerprints, or analyze your own MIDI/MusicXML solo part locally.
 
-**App:** https://virtuoso-score-lab-ethan.ewuf4n.chatgpt.site (owner-private deployment).
+**App:** https://virtuoso.ethanwu.me
 
 ## Open the app locally
 
@@ -80,7 +80,7 @@ Publish a reviewed dashboard to Tableau Public and embed it in your existing por
 
 ## Put it on your portfolio
 
-Deploy the contents of `web/` to any static host (GitHub Pages, Netlify, or your existing site). Keep `engine.mjs`, `data.json`, `vendor/`, and `downloads/` beside `index.html`. There are no API keys, build steps, or paid services. For an iframe, point `src` at **your publicly deployed URL** and include a descriptive title and sufficient height. The current Sites deployment and GitHub repository are private; they are not public portfolio links yet. This project does not change their audience automatically.
+Deploy the contents of `web/` to any static host (GitHub Pages, Netlify, or your existing site). Keep `engine.mjs`, `data.json`, `vendor/`, and `downloads/` beside `index.html`. There are no API keys, build steps, or paid services. For an iframe, point `src` at **your publicly deployed URL** and include a descriptive title and sufficient height. The app is publicly hosted at https://virtuoso.ethanwu.me through Cloudflare Workers, which automatically deploys updates from `main`. The GitHub repository remains private.
 
 ## Project files
 - `web/`: complete static app; vendored fflate 0.8.2 includes its MIT license.
