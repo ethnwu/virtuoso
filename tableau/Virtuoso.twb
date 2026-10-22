@@ -123,6 +123,38 @@
       <column name="[Performance Conditions]" datatype="string" role="dimension" type="nominal" />
       <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
     </datasource>
+    <datasource caption="Virtuoso — repertoire" inline="true" name="repertoire" version="18.1">
+      <connection class="textscan" directory="Data" filename="known_repertoire.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
+        <relation name="known_repertoire.csv" table="[known_repertoire.csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," width="0">
+            <column name="Work ID" datatype="string" ordinal="0" />
+            <column name="Composer" datatype="string" ordinal="1" />
+            <column name="Work" datatype="string" ordinal="2" />
+            <column name="Analysis Status" datatype="string" ordinal="3" />
+            <column name="Scheme" datatype="string" ordinal="4" />
+            <column name="Rating" datatype="string" ordinal="5" />
+            <column name="Scope" datatype="string" ordinal="6" />
+            <column name="Source URL" datatype="string" ordinal="7" />
+            <column name="Source Locator" datatype="string" ordinal="8" />
+            <column name="Conditions" datatype="string" ordinal="9" />
+            <column name="Retrieved" datatype="string" ordinal="10" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column name="[Work ID]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Work]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Analysis Status]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Scheme]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Rating]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Scope]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Source URL]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Source Locator]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Conditions]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Retrieved]" datatype="string" role="dimension" type="nominal" />
+      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+    </datasource>
   </datasources>
   <worksheets>
     <worksheet name="01 — Technical demand index">
@@ -376,6 +408,60 @@
       </table>
       <simple-id uuid="{E781EFED-1FF2-59CE-ACE9-4EB3C7AD248B}" />
     </worksheet>
+    <worksheet name="06 — Expanded concerto repertoire">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Avenir Next" fontsize="14" bold="true">06 — Expanded concerto repertoire</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Virtuoso — repertoire" name="repertoire" />
+          </datasources>
+          <datasource-dependencies datasource="repertoire">
+            <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Work]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Rating]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Scope]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Analysis Status]" datatype="string" role="dimension" type="nominal" />
+            <column-instance column="[Composer]" derivation="None" name="[none:Composer:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Work]" derivation="None" name="[none:Work:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Rating]" derivation="None" name="[none:Rating:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Scope]" derivation="None" name="[none:Scope:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Analysis Status]" derivation="None" name="[none:Analysis Status:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="worksheet">
+            <format attr="background-color" value="#fbf8f1" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[repertoire].[none:Analysis Status:nk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#97602e" />
+                <format attr="mark-labels-show" value="true" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[repertoire].[none:Composer:nk] / [repertoire].[none:Work:nk] / [repertoire].[none:Rating:nk] / [repertoire].[none:Scope:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid="{983404EC-050D-5F10-8ADC-2B5A7CAB9BCC}" />
+    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard name="Virtuoso">
@@ -441,6 +527,11 @@
     </window>
     <window class="worksheet" name="05 — Published ratings">
       <viewpoint name="05 — Published ratings">
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="06 — Expanded concerto repertoire">
+      <viewpoint name="06 — Expanded concerto repertoire">
         <zoom type="entire-view" />
       </viewpoint>
     </window>

@@ -27,3 +27,7 @@ Virtuoso analyzes the technical demands of violin concertos. Its first concerto 
 
 ## Published ratings
 Worksheet 05 uses `ratings_tableau.csv` as a separate source. It shows the original scheme, rating, and target scope. Keep it separate from musical feature sums. There is no conversion between Henle, ABRSM, RCM, or diploma codes. `Source Verified` is not training approval; see `docs/RATINGS.md`.
+
+
+## Expanded repertoire
+Worksheet **06 — Expanded concerto repertoire** uses `Data/known_repertoire.csv` as a separate source for Sibelius, Lalo, Mendelssohn, Bruch, Brahms, Saint-Saëns, and Mozart Nos. 3–5. These nine works have published diploma placements and no verified score features. Do not join them to movement features to invent numeric scores. Selection-level placements (Lalo: any two or more movements; Brahms: first movement with Joachim cadenza) retain their conditions.
