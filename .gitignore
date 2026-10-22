@@ -5,3 +5,5 @@ __pycache__/
 .env
 .env.*
 data/raw/source-page.html
+data/downloads/
+data/note_events.csv

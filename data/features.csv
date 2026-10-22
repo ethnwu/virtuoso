@@ -1,33 +1,101 @@
-Piece ID,Piece,Composer,Work,Movement Order,Feature,Feature Score,Weight,Weighted Contribution
-BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Density,64.5783,0.35,22.6024
-BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Chords,14.8551,0.3,4.4565
-BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Register,6.3433,0.2,1.2687
-BWV1002-01,Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",1,Leaps,30.8824,0.15,4.6324
-BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Density,49.4792,0.35,17.3177
-BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Chords,0.0,0.3,0.0
-BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Register,5.7895,0.2,1.1579
-BWV1002-02,Double after Allemanda,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",2,Leaps,40.1715,0.15,6.0257
-BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Density,24.8434,0.35,8.6952
-BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Chords,0.3516,0.3,0.1055
-BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Register,6.3025,0.2,1.2605
-BWV1002-03,Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",3,Leaps,38.8302,0.15,5.8245
-BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Density,49.7396,0.35,17.4089
-BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Chords,0.0,0.3,0.0
-BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Register,6.7016,0.2,1.3403
-BWV1002-04,Double after Corrente,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",4,Leaps,25.2271,0.15,3.7841
-BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Density,33.8384,0.35,11.8434
-BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Chords,75.3425,0.3,22.6027
-BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Register,0.7463,0.2,0.1493
-BWV1002-05,Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",5,Leaps,26.1494,0.15,3.9224
-BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Density,24.4281,0.35,8.5498
-BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Chords,0.0,0.3,0.0
-BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Register,1.3378,0.2,0.2676
-BWV1002-06,Double after Sarabande,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",6,Leaps,32.2707,0.15,4.8406
-BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Density,24.4945,0.35,8.5731
-BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Chords,41.6667,0.3,12.5
-BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Register,8.2552,0.2,1.651
-BWV1002-07,Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",7,Leaps,29.9957,0.15,4.4994
-BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Density,25.5064,0.35,8.9273
-BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Chords,3.3888,0.3,1.0166
-BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Register,5.0542,0.2,1.0108
-BWV1002-08,Double after Tempo di Borea,J. S. Bach,"Partita No. 1 in B minor, BWV 1002",8,Leaps,34.7222,0.15,5.2083
+Piece ID,Piece,Composer,Work ID,Work,Period,Movement Order,Feature,Feature Score,Weight,Weighted Contribution
+BWV1041-1,J. S. Bach · BWV1041 · 1. Allegro,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,1,Density,39.3275,0.35,13.7646
+BWV1041-1,J. S. Bach · BWV1041 · 1. Allegro,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,1,Chords,0.0,0.3,0.0
+BWV1041-1,J. S. Bach · BWV1041 · 1. Allegro,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,1,Register,7.0632,0.2,1.4126
+BWV1041-1,J. S. Bach · BWV1041 · 1. Allegro,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,1,Leaps,26.8295,0.15,4.0244
+BWV1041-2,J. S. Bach · BWV1041 · 2. Andante,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,2,Density,33.7054,0.35,11.7969
+BWV1041-2,J. S. Bach · BWV1041 · 2. Andante,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,2,Chords,0.0,0.3,0.0
+BWV1041-2,J. S. Bach · BWV1041 · 2. Andante,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,2,Register,12.8035,0.2,2.5607
+BWV1041-2,J. S. Bach · BWV1041 · 2. Andante,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,2,Leaps,21.958,0.15,3.2937
+BWV1041-3,J. S. Bach · BWV1041 · 3. Allegro assai,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,3,Density,24.6054,0.35,8.6119
+BWV1041-3,J. S. Bach · BWV1041 · 3. Allegro assai,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,3,Chords,0.4026,0.3,0.1208
+BWV1041-3,J. S. Bach · BWV1041 · 3. Allegro assai,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,3,Register,11.2269,0.2,2.2454
+BWV1041-3,J. S. Bach · BWV1041 · 3. Allegro assai,J. S. Bach,BWV1041,"Violin Concerto in A minor, BWV 1041",Baroque,3,Leaps,29.5662,0.15,4.4349
+BWV1042-1,J. S. Bach · BWV1042 · 1. Movement 1,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,1,Density,44.1547,0.35,15.4541
+BWV1042-1,J. S. Bach · BWV1042 · 1. Movement 1,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,1,Chords,1.9236,0.3,0.5771
+BWV1042-1,J. S. Bach · BWV1042 · 1. Movement 1,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,1,Register,4.0733,0.2,0.8147
+BWV1042-1,J. S. Bach · BWV1042 · 1. Movement 1,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,1,Leaps,29.244,0.15,4.3866
+BWV1042-2,J. S. Bach · BWV1042 · 2. Movement 2,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,2,Density,44.5896,0.35,15.6063
+BWV1042-2,J. S. Bach · BWV1042 · 2. Movement 2,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,2,Chords,0.7003,0.3,0.2101
+BWV1042-2,J. S. Bach · BWV1042 · 2. Movement 2,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,2,Register,9.205,0.2,1.841
+BWV1042-2,J. S. Bach · BWV1042 · 2. Movement 2,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,2,Leaps,23.2807,0.15,3.4921
+BWV1042-3,J. S. Bach · BWV1042 · 3. Movement 3,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,3,Density,47.1875,0.35,16.5156
+BWV1042-3,J. S. Bach · BWV1042 · 3. Movement 3,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,3,Chords,2.9963,0.3,0.8989
+BWV1042-3,J. S. Bach · BWV1042 · 3. Movement 3,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,3,Register,0.4415,0.2,0.0883
+BWV1042-3,J. S. Bach · BWV1042 · 3. Movement 3,J. S. Bach,BWV1042,"Violin Concerto in E major, BWV 1042",Baroque,3,Leaps,22.0472,0.15,3.3071
+BWV1056R-2,J. S. Bach · BWV1056R · 2. Largo,J. S. Bach,BWV1056R,"Violin Concerto in G minor, BWV 1056R (reconstruction)",Baroque,2,Density,42.1131,0.35,14.7396
+BWV1056R-2,J. S. Bach · BWV1056R · 2. Largo,J. S. Bach,BWV1056R,"Violin Concerto in G minor, BWV 1056R (reconstruction)",Baroque,2,Chords,0.0,0.3,0.0
+BWV1056R-2,J. S. Bach · BWV1056R · 2. Largo,J. S. Bach,BWV1056R,"Violin Concerto in G minor, BWV 1056R (reconstruction)",Baroque,2,Register,12.0141,0.2,2.4028
+BWV1056R-2,J. S. Bach · BWV1056R · 2. Largo,J. S. Bach,BWV1056R,"Violin Concerto in G minor, BWV 1056R (reconstruction)",Baroque,2,Leaps,21.9267,0.15,3.289
+BEETHOVEN61-1,Ludwig van Beethoven · BEETHOVEN61 · 1. Movement 1,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,1,Density,23.0304,0.35,8.0606
+BEETHOVEN61-1,Ludwig van Beethoven · BEETHOVEN61 · 1. Movement 1,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,1,Chords,0.1015,0.3,0.0305
+BEETHOVEN61-1,Ludwig van Beethoven · BEETHOVEN61 · 1. Movement 1,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,1,Register,43.2005,0.2,8.6401
+BEETHOVEN61-1,Ludwig van Beethoven · BEETHOVEN61 · 1. Movement 1,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,1,Leaps,31.9398,0.15,4.791
+BEETHOVEN61-2,Ludwig van Beethoven · BEETHOVEN61 · 2. Movement 2,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,2,Density,24.4035,0.35,8.5412
+BEETHOVEN61-2,Ludwig van Beethoven · BEETHOVEN61 · 2. Movement 2,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,2,Chords,0.0,0.3,0.0
+BEETHOVEN61-2,Ludwig van Beethoven · BEETHOVEN61 · 2. Movement 2,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,2,Register,61.7318,0.2,12.3464
+BEETHOVEN61-2,Ludwig van Beethoven · BEETHOVEN61 · 2. Movement 2,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,2,Leaps,21.6667,0.15,3.25
+BEETHOVEN61-3,Ludwig van Beethoven · BEETHOVEN61 · 3. Movement 3,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,3,Density,23.3457,0.35,8.171
+BEETHOVEN61-3,Ludwig van Beethoven · BEETHOVEN61 · 3. Movement 3,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,3,Chords,10.1754,0.3,3.0526
+BEETHOVEN61-3,Ludwig van Beethoven · BEETHOVEN61 · 3. Movement 3,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,3,Register,42.3191,0.2,8.4638
+BEETHOVEN61-3,Ludwig van Beethoven · BEETHOVEN61 · 3. Movement 3,Ludwig van Beethoven,BEETHOVEN61,"Violin Concerto in D major, Op. 61",Classical,3,Leaps,44.3655,0.15,6.6548
+TCHAIKOVSKY35-1,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 1. Allegro moderato,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,1,Density,44.361,0.35,15.5263
+TCHAIKOVSKY35-1,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 1. Allegro moderato,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,1,Chords,21.3178,0.3,6.3953
+TCHAIKOVSKY35-1,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 1. Allegro moderato,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,1,Register,44.0335,0.2,8.8067
+TCHAIKOVSKY35-1,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 1. Allegro moderato,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,1,Leaps,45.3944,0.15,6.8092
+TCHAIKOVSKY35-2,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 2. Canzonetta,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,2,Density,20.8583,0.35,7.3004
+TCHAIKOVSKY35-2,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 2. Canzonetta,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,2,Chords,0.0,0.3,0.0
+TCHAIKOVSKY35-2,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 2. Canzonetta,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,2,Register,10.5263,0.2,2.1053
+TCHAIKOVSKY35-2,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 2. Canzonetta,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,2,Leaps,24.1807,0.15,3.6271
+TCHAIKOVSKY35-3,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 3. Finale,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,3,Density,33.2764,0.35,11.6467
+TCHAIKOVSKY35-3,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 3. Finale,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,3,Chords,15.8277,0.3,4.7483
+TCHAIKOVSKY35-3,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 3. Finale,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,3,Register,28.0712,0.2,5.6142
+TCHAIKOVSKY35-3,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 3. Finale,Pyotr Ilyich Tchaikovsky,TCHAIKOVSKY35,"Violin Concerto in D major, Op. 35",Romantic,3,Leaps,31.2605,0.15,4.6891
+RIEDING35-1,Oskar Rieding · RIEDING35 · 1. Movement 1,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,1,Density,13.8672,0.35,4.8535
+RIEDING35-1,Oskar Rieding · RIEDING35 · 1. Movement 1,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,1,Chords,0.0,0.3,0.0
+RIEDING35-1,Oskar Rieding · RIEDING35 · 1. Movement 1,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,1,Register,0.0,0.2,0.0
+RIEDING35-1,Oskar Rieding · RIEDING35 · 1. Movement 1,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,1,Leaps,22.7637,0.15,3.4145
+RIEDING35-2,Oskar Rieding · RIEDING35 · 2. Movement 2,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,2,Density,16.1232,0.35,5.6431
+RIEDING35-2,Oskar Rieding · RIEDING35 · 2. Movement 2,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,2,Chords,0.0,0.3,0.0
+RIEDING35-2,Oskar Rieding · RIEDING35 · 2. Movement 2,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,2,Register,0.0,0.2,0.0
+RIEDING35-2,Oskar Rieding · RIEDING35 · 2. Movement 2,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,2,Leaps,21.7514,0.15,3.2627
+RIEDING35-3,Oskar Rieding · RIEDING35 · 3. Movement 3,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,3,Density,25.8523,0.35,9.0483
+RIEDING35-3,Oskar Rieding · RIEDING35 · 3. Movement 3,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,3,Chords,0.2296,0.3,0.0689
+RIEDING35-3,Oskar Rieding · RIEDING35 · 3. Movement 3,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,3,Register,0.0,0.2,0.0
+RIEDING35-3,Oskar Rieding · RIEDING35 · 3. Movement 3,Oskar Rieding,RIEDING35,"Violin Concerto in B minor, Op. 35",Romantic,3,Leaps,18.6552,0.15,2.7983
+TWV51G8-1,Georg Philipp Telemann · TWV51G8 · 1. Movement 1,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,1,Density,33.0389,0.35,11.5636
+TWV51G8-1,Georg Philipp Telemann · TWV51G8 · 1. Movement 1,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,1,Chords,6.7223,0.3,2.0167
+TWV51G8-1,Georg Philipp Telemann · TWV51G8 · 1. Movement 1,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,1,Register,5.615,0.2,1.123
+TWV51G8-1,Georg Philipp Telemann · TWV51G8 · 1. Movement 1,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,1,Leaps,33.1012,0.15,4.9652
+TWV51G8-2,Georg Philipp Telemann · TWV51G8 · 2. Movement 2,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,2,Density,32.1646,0.35,11.2576
+TWV51G8-2,Georg Philipp Telemann · TWV51G8 · 2. Movement 2,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,2,Chords,0.0,0.3,0.0
+TWV51G8-2,Georg Philipp Telemann · TWV51G8 · 2. Movement 2,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,2,Register,5.6872,0.2,1.1374
+TWV51G8-2,Georg Philipp Telemann · TWV51G8 · 2. Movement 2,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,2,Leaps,20.9524,0.15,3.1429
+TWV51G8-3,Georg Philipp Telemann · TWV51G8 · 3. Movement 3,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,3,Density,27.9227,0.35,9.7729
+TWV51G8-3,Georg Philipp Telemann · TWV51G8 · 3. Movement 3,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,3,Chords,0.0,0.3,0.0
+TWV51G8-3,Georg Philipp Telemann · TWV51G8 · 3. Movement 3,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,3,Register,0.0,0.2,0.0
+TWV51G8-3,Georg Philipp Telemann · TWV51G8 · 3. Movement 3,Georg Philipp Telemann,TWV51G8,"Violin Concerto in G major, TWV 51:G8",Baroque,3,Leaps,21.3172,0.15,3.1976
+RV310-1,Antonio Vivaldi · RV310 · 1. Movement 1,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,1,Density,37.5977,0.35,13.1592
+RV310-1,Antonio Vivaldi · RV310 · 1. Movement 1,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,1,Chords,0.0,0.3,0.0
+RV310-1,Antonio Vivaldi · RV310 · 1. Movement 1,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,1,Register,6.4935,0.2,1.2987
+RV310-1,Antonio Vivaldi · RV310 · 1. Movement 1,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,1,Leaps,26.8531,0.15,4.028
+RV310-2,Antonio Vivaldi · RV310 · 2. Movement 2,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,2,Density,30.4688,0.35,10.6641
+RV310-2,Antonio Vivaldi · RV310 · 2. Movement 2,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,2,Chords,0.0,0.3,0.0
+RV310-2,Antonio Vivaldi · RV310 · 2. Movement 2,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,2,Register,0.0,0.2,0.0
+RV310-2,Antonio Vivaldi · RV310 · 2. Movement 2,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,2,Leaps,22.5322,0.15,3.3798
+RV310-3,Antonio Vivaldi · RV310 · 3. Movement 3,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,3,Density,33.0044,0.35,11.5515
+RV310-3,Antonio Vivaldi · RV310 · 3. Movement 3,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,3,Chords,0.0,0.3,0.0
+RV310-3,Antonio Vivaldi · RV310 · 3. Movement 3,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,3,Register,17.608,0.2,3.5216
+RV310-3,Antonio Vivaldi · RV310 · 3. Movement 3,Antonio Vivaldi,RV310,"Violin Concerto, Op. 3 No. 3, RV 310",Baroque,3,Leaps,25.624,0.15,3.8436
+RV356-1,Antonio Vivaldi · RV356 · 1. Movement 1,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,1,Density,34.9064,0.35,12.2172
+RV356-1,Antonio Vivaldi · RV356 · 1. Movement 1,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,1,Chords,0.0,0.3,0.0
+RV356-1,Antonio Vivaldi · RV356 · 1. Movement 1,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,1,Register,6.9274,0.2,1.3855
+RV356-1,Antonio Vivaldi · RV356 · 1. Movement 1,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,1,Leaps,28.7006,0.15,4.3051
+RV356-2,Antonio Vivaldi · RV356 · 2. Movement 2,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,2,Density,44.8661,0.35,15.7031
+RV356-2,Antonio Vivaldi · RV356 · 2. Movement 2,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,2,Chords,0.0,0.3,0.0
+RV356-2,Antonio Vivaldi · RV356 · 2. Movement 2,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,2,Register,0.0,0.2,0.0
+RV356-2,Antonio Vivaldi · RV356 · 2. Movement 2,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,2,Leaps,14.8333,0.15,2.225
+RV356-3,Antonio Vivaldi · RV356 · 3. Movement 3,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,3,Density,33.5924,0.35,11.7573
+RV356-3,Antonio Vivaldi · RV356 · 3. Movement 3,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,3,Chords,0.0,0.3,0.0
+RV356-3,Antonio Vivaldi · RV356 · 3. Movement 3,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,3,Register,18.509,0.2,3.7018
+RV356-3,Antonio Vivaldi · RV356 · 3. Movement 3,Antonio Vivaldi,RV356,"Violin Concerto, Op. 3 No. 6, RV 356",Baroque,3,Leaps,24.2063,0.15,3.631

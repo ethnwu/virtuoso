@@ -1,8 +1,252 @@
 {
-  "movements": 8,
-  "noteheads": 4001,
-  "features": 32,
-  "checks": "Index recomputation, bounds, unique IDs, note/onset counts passed",
-  "model_version": "0.1 exploratory",
-  "source": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=180"
+  "works": 9,
+  "movements": 25,
+  "composers": 6,
+  "note_events": 28108,
+  "passage_windows": 660,
+  "expert_ratings_available": 0,
+  "model_status": "Rules-based index; no trained difficulty predictor",
+  "checks": [
+    "Unique movement IDs",
+    "Archive SHA-256 matches",
+    "Explicit solo-track names and note counts match source manifest",
+    "Violin pitch bounds",
+    "Score recomputation and range",
+    "Passage counts reconcile"
+  ],
+  "solo_track_audit": [
+    {
+      "piece_id": "BWV1041-1",
+      "track_index": 1,
+      "track_name": "",
+      "note_events": 1076,
+      "min_pitch": 56,
+      "max_pitch": 88,
+      "source_id": "bach1041"
+    },
+    {
+      "piece_id": "BWV1041-2",
+      "track_index": 1,
+      "track_name": "",
+      "note_events": 453,
+      "min_pitch": 55,
+      "max_pitch": 91,
+      "source_id": "bach1041"
+    },
+    {
+      "piece_id": "BWV1041-3",
+      "track_index": 1,
+      "track_name": "",
+      "note_events": 1247,
+      "min_pitch": 57,
+      "max_pitch": 89,
+      "source_id": "bach1041"
+    },
+    {
+      "piece_id": "BWV1042-1",
+      "track_index": 1,
+      "track_name": ":SoloViolin",
+      "note_events": 2455,
+      "min_pitch": 56,
+      "max_pitch": 88,
+      "source_id": "bach1042"
+    },
+    {
+      "piece_id": "BWV1042-2",
+      "track_index": 1,
+      "track_name": "",
+      "note_events": 478,
+      "min_pitch": 56,
+      "max_pitch": 88,
+      "source_id": "bach1042"
+    },
+    {
+      "piece_id": "BWV1042-3",
+      "track_index": 1,
+      "track_name": ":SoloViolin",
+      "note_events": 906,
+      "min_pitch": 58,
+      "max_pitch": 85,
+      "source_id": "bach1042"
+    },
+    {
+      "piece_id": "BWV1056R-2",
+      "track_index": 1,
+      "track_name": "",
+      "note_events": 283,
+      "min_pitch": 66,
+      "max_pitch": 87,
+      "source_id": "bach1056"
+    },
+    {
+      "piece_id": "BEETHOVEN61-1",
+      "track_index": 8,
+      "track_name": "eight",
+      "note_events": 3287,
+      "min_pitch": 55,
+      "max_pitch": 100,
+      "source_id": "beethoven1"
+    },
+    {
+      "piece_id": "BEETHOVEN61-2",
+      "track_index": 4,
+      "track_name": "four",
+      "note_events": 716,
+      "min_pitch": 55,
+      "max_pitch": 100,
+      "source_id": "beethoven2"
+    },
+    {
+      "piece_id": "BEETHOVEN61-3",
+      "track_index": 8,
+      "track_name": "eight",
+      "note_events": 2018,
+      "min_pitch": 55,
+      "max_pitch": 98,
+      "source_id": "beethoven3"
+    },
+    {
+      "piece_id": "TCHAIKOVSKY35-1",
+      "track_index": 10,
+      "track_name": "solo:",
+      "note_events": 5137,
+      "min_pitch": 55,
+      "max_pitch": 101,
+      "source_id": "tchaikovsky"
+    },
+    {
+      "piece_id": "TCHAIKOVSKY35-2",
+      "track_index": 6,
+      "track_name": "solo:",
+      "note_events": 418,
+      "min_pitch": 55,
+      "max_pitch": 94,
+      "source_id": "tchaikovsky"
+    },
+    {
+      "piece_id": "TCHAIKOVSKY35-3",
+      "track_index": 10,
+      "track_name": "solo:",
+      "note_events": 3313,
+      "min_pitch": 55,
+      "max_pitch": 100,
+      "source_id": "tchaikovsky"
+    },
+    {
+      "piece_id": "RIEDING35-1",
+      "track_index": 1,
+      "track_name": "one:",
+      "note_events": 355,
+      "min_pitch": 55,
+      "max_pitch": 83,
+      "source_id": "rieding"
+    },
+    {
+      "piece_id": "RIEDING35-2",
+      "track_index": 1,
+      "track_name": "two:",
+      "note_events": 178,
+      "min_pitch": 55,
+      "max_pitch": 83,
+      "source_id": "rieding"
+    },
+    {
+      "piece_id": "RIEDING35-3",
+      "track_index": 1,
+      "track_name": "three:",
+      "note_events": 728,
+      "min_pitch": 58,
+      "max_pitch": 83,
+      "source_id": "rieding"
+    },
+    {
+      "piece_id": "TWV51G8-1",
+      "track_index": 3,
+      "track_name": "violinoP:",
+      "note_events": 748,
+      "min_pitch": 57,
+      "max_pitch": 88,
+      "source_id": "telemann"
+    },
+    {
+      "piece_id": "TWV51G8-2",
+      "track_index": 3,
+      "track_name": "violinoP:",
+      "note_events": 211,
+      "min_pitch": 66,
+      "max_pitch": 86,
+      "source_id": "telemann"
+    },
+    {
+      "piece_id": "TWV51G8-3",
+      "track_index": 3,
+      "track_name": "violinoP:",
+      "note_events": 621,
+      "min_pitch": 55,
+      "max_pitch": 83,
+      "source_id": "telemann"
+    },
+    {
+      "piece_id": "RV310-1",
+      "track_index": 1,
+      "track_name": "violinI:",
+      "note_events": 770,
+      "min_pitch": 59,
+      "max_pitch": 86,
+      "source_id": "vivaldi"
+    },
+    {
+      "piece_id": "RV310-2",
+      "track_index": 1,
+      "track_name": "violinI:",
+      "note_events": 234,
+      "min_pitch": 64,
+      "max_pitch": 83,
+      "source_id": "vivaldi"
+    },
+    {
+      "piece_id": "RV310-3",
+      "track_index": 1,
+      "track_name": "violinI:",
+      "note_events": 602,
+      "min_pitch": 60,
+      "max_pitch": 86,
+      "source_id": "vivaldi"
+    },
+    {
+      "piece_id": "RV356-1",
+      "track_index": 1,
+      "track_name": "violinI:",
+      "note_events": 895,
+      "min_pitch": 55,
+      "max_pitch": 86,
+      "source_id": "vivaldi"
+    },
+    {
+      "piece_id": "RV356-2",
+      "track_index": 1,
+      "track_name": "violinI:",
+      "note_events": 201,
+      "min_pitch": 69,
+      "max_pitch": 82,
+      "source_id": "vivaldi"
+    },
+    {
+      "piece_id": "RV356-3",
+      "track_index": 1,
+      "track_name": "violinI:",
+      "note_events": 778,
+      "min_pitch": 62,
+      "max_pitch": 88,
+      "source_id": "vivaldi"
+    }
+  ],
+  "coverage_by_composer": {
+    "Antonio Vivaldi": 6,
+    "Georg Philipp Telemann": 3,
+    "J. S. Bach": 7,
+    "Ludwig van Beethoven": 3,
+    "Oskar Rieding": 3,
+    "Pyotr Ilyich Tchaikovsky": 3
+  }
 }

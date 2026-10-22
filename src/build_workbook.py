@@ -56,15 +56,15 @@ sheet('01 — Technical demand index','pieces',['Piece'],['Virtuoso Index'],'Bar
 sheet('02 — Density versus chord frequency','pieces',['Chord Onsets Pct'],['Notes per Quarter'],'Circle',[('lod','Piece'),('text','Piece'),('size','Virtuoso Index')])
 sheet('03 — Technical profiles','features',['Piece'],['Feature'],'Square',[('color','Feature Score'),('text','Feature Score')])
 sheet('04 — Pitch range','pieces',['Piece'],['Highest MIDI'],'Bar',[('text','Highest MIDI')])
-dashboards=sub(w,'dashboards');d=sub(dashboards,'dashboard',name='Virtuoso');sub(d,'style');sub(d,'size',maxheight=900,maxwidth=1400,minheight=900,minwidth=1400)
+dashboards=sub(w,'dashboards');d=sub(dashboards,'dashboard',name='Virtuoso');sub(d,'style');sub(d,'size',maxheight=1500,maxwidth=1600,minheight=1500,minwidth=1600)
 zones=sub(d,'zones');root=sub(zones,'zone',id=0,type__v2='layout-basic',x=0,y=0,w=100000,h=100000)
-tz=sub(root,'zone',id=1,type__v2='text',x=1500,y=1000,w=97000,h=12000)
+tz=sub(root,'zone',id=1,type__v2='text',x=1500,y=1000,w=97000,h=8500)
 ft=sub(tz,'formatted-text');sub(ft,'run','VIRTUOSO  /  The data behind violin difficulty\n',fontname='Avenir Next',fontsize='27',bold='true',fontcolor='#24382c')
-sub(ft,'run','Bach pilot · Eight movements · Experimental technical-demand index, not a validated difficulty grade',fontname='Avenir Next',fontsize='11',fontcolor='#59685c')
-for i,(name,x,y,ww,hh) in enumerate([('01 — Technical demand index',1500,15000,47000,38000),('02 — Density versus chord frequency',51000,15000,47500,38000),('03 — Technical profiles',1500,55000,97000,35000)],2):
+sub(ft,'run','Concerto corpus · 25 movements / 9 works / 6 composers · Experimental technical-demand index, not a validated difficulty grade',fontname='Avenir Next',fontsize='11',fontcolor='#59685c')
+for i,(name,x,y,ww,hh) in enumerate([('01 — Technical demand index',1500,11000,47000,47000),('02 — Density versus chord frequency',51000,11000,47500,47000),('03 — Technical profiles',1500,60000,97000,31000)],2):
     z=sub(root,'zone',id=i,name=name,x=x,y=y,w=ww,h=hh);zs=sub(z,'zone-style');sub(zs,'format',attr='margin',value=10);sub(zs,'format',attr='border-style',value='none')
 tz=sub(root,'zone',id=5,type__v2='text',x=1500,y=92000,w=97000,h=6500)
-ft=sub(tz,'formatted-text');sub(ft,'run','Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project / Erik Sandberg, public domain.',fontname='Avenir Next',fontsize=10)
+ft=sub(tz,'formatted-text');sub(ft,'run','Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project; individual attribution and licenses in the source data.',fontname='Avenir Next',fontsize=10)
 sub(d,'simple-id',uuid='{'+str(uuid.uuid5(uuid.NAMESPACE_URL,'virtuoso/dashboard')).upper()+'}')
 wins=sub(w,'windows',**{'saved-dpi-scale-factor':'1.0','source-height':'1000'})
 for name in ['01 — Technical demand index','02 — Density versus chord frequency','03 — Technical profiles','04 — Pitch range']:

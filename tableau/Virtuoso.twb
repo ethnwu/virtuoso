@@ -12,21 +12,26 @@
             <column name="Piece ID" datatype="string" ordinal="0" />
             <column name="Piece" datatype="string" ordinal="1" />
             <column name="Composer" datatype="string" ordinal="2" />
-            <column name="Work" datatype="string" ordinal="3" />
-            <column name="Movement Order" datatype="real" ordinal="4" />
-            <column name="Virtuoso Index" datatype="real" ordinal="5" />
-            <column name="Noteheads" datatype="real" ordinal="6" />
-            <column name="Onsets" datatype="real" ordinal="7" />
-            <column name="Quarter Beats" datatype="real" ordinal="8" />
-            <column name="Notes per Quarter" datatype="real" ordinal="9" />
-            <column name="Chord Onsets Pct" datatype="real" ordinal="10" />
-            <column name="High Notes Pct" datatype="real" ordinal="11" />
-            <column name="Mean Leap Semitones" datatype="real" ordinal="12" />
-            <column name="Lowest MIDI" datatype="real" ordinal="13" />
-            <column name="Highest MIDI" datatype="real" ordinal="14" />
-            <column name="Source URL" datatype="string" ordinal="15" />
-            <column name="License" datatype="string" ordinal="16" />
-            <column name="Model Version" datatype="string" ordinal="17" />
+            <column name="Work ID" datatype="string" ordinal="3" />
+            <column name="Work" datatype="string" ordinal="4" />
+            <column name="Period" datatype="string" ordinal="5" />
+            <column name="Movement Order" datatype="real" ordinal="6" />
+            <column name="Virtuoso Index" datatype="real" ordinal="7" />
+            <column name="Noteheads" datatype="real" ordinal="8" />
+            <column name="Onsets" datatype="real" ordinal="9" />
+            <column name="Quarter Beats" datatype="real" ordinal="10" />
+            <column name="Notes per Quarter" datatype="real" ordinal="11" />
+            <column name="Chord Onsets Pct" datatype="real" ordinal="12" />
+            <column name="High Notes Pct" datatype="real" ordinal="13" />
+            <column name="Mean Leap Semitones" datatype="real" ordinal="14" />
+            <column name="Lowest MIDI" datatype="real" ordinal="15" />
+            <column name="Highest MIDI" datatype="real" ordinal="16" />
+            <column name="Source URL" datatype="string" ordinal="17" />
+            <column name="License" datatype="string" ordinal="18" />
+            <column name="Attribution" datatype="string" ordinal="19" />
+            <column name="Model Version" datatype="string" ordinal="20" />
+            <column name="Scope Note" datatype="string" ordinal="21" />
+            <column name="Expert Grade" datatype="string" ordinal="22" />
           </columns>
         </relation>
       </connection>
@@ -34,7 +39,9 @@
       <column name="[Piece ID]" datatype="string" role="dimension" type="nominal" />
       <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
       <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Work ID]" datatype="string" role="dimension" type="nominal" />
       <column name="[Work]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Period]" datatype="string" role="dimension" type="nominal" />
       <column name="[Movement Order]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <column name="[Virtuoso Index]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <column name="[Noteheads]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
@@ -48,7 +55,10 @@
       <column name="[Highest MIDI]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <column name="[Source URL]" datatype="string" role="dimension" type="nominal" />
       <column name="[License]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Attribution]" datatype="string" role="dimension" type="nominal" />
       <column name="[Model Version]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Scope Note]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Expert Grade]" datatype="string" role="dimension" type="nominal" />
       <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
     </datasource>
     <datasource caption="Virtuoso — features" inline="true" name="features" version="18.1">
@@ -58,12 +68,14 @@
             <column name="Piece ID" datatype="string" ordinal="0" />
             <column name="Piece" datatype="string" ordinal="1" />
             <column name="Composer" datatype="string" ordinal="2" />
-            <column name="Work" datatype="string" ordinal="3" />
-            <column name="Movement Order" datatype="real" ordinal="4" />
-            <column name="Feature" datatype="string" ordinal="5" />
-            <column name="Feature Score" datatype="real" ordinal="6" />
-            <column name="Weight" datatype="real" ordinal="7" />
-            <column name="Weighted Contribution" datatype="real" ordinal="8" />
+            <column name="Work ID" datatype="string" ordinal="3" />
+            <column name="Work" datatype="string" ordinal="4" />
+            <column name="Period" datatype="string" ordinal="5" />
+            <column name="Movement Order" datatype="real" ordinal="6" />
+            <column name="Feature" datatype="string" ordinal="7" />
+            <column name="Feature Score" datatype="real" ordinal="8" />
+            <column name="Weight" datatype="real" ordinal="9" />
+            <column name="Weighted Contribution" datatype="real" ordinal="10" />
           </columns>
         </relation>
       </connection>
@@ -71,7 +83,9 @@
       <column name="[Piece ID]" datatype="string" role="dimension" type="nominal" />
       <column name="[Piece]" datatype="string" role="dimension" type="nominal" />
       <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Work ID]" datatype="string" role="dimension" type="nominal" />
       <column name="[Work]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Period]" datatype="string" role="dimension" type="nominal" />
       <column name="[Movement Order]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <column name="[Feature]" datatype="string" role="dimension" type="nominal" />
       <column name="[Feature Score]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
@@ -286,29 +300,29 @@
   <dashboards>
     <dashboard name="Virtuoso">
       <style />
-      <size maxheight="900" maxwidth="1400" minheight="900" minwidth="1400" />
+      <size maxheight="1500" maxwidth="1600" minheight="1500" minwidth="1600" />
       <zones>
         <zone id="0" type-v2="layout-basic" x="0" y="0" w="100000" h="100000">
-          <zone id="1" type-v2="text" x="1500" y="1000" w="97000" h="12000">
+          <zone id="1" type-v2="text" x="1500" y="1000" w="97000" h="8500">
             <formatted-text>
               <run fontname="Avenir Next" fontsize="27" bold="true" fontcolor="#24382c">VIRTUOSO  /  The data behind violin difficulty
 </run>
-              <run fontname="Avenir Next" fontsize="11" fontcolor="#59685c">Bach pilot · Eight movements · Experimental technical-demand index, not a validated difficulty grade</run>
+              <run fontname="Avenir Next" fontsize="11" fontcolor="#59685c">Concerto corpus · 25 movements / 9 works / 6 composers · Experimental technical-demand index, not a validated difficulty grade</run>
             </formatted-text>
           </zone>
-          <zone id="2" name="01 — Technical demand index" x="1500" y="15000" w="47000" h="38000">
+          <zone id="2" name="01 — Technical demand index" x="1500" y="11000" w="47000" h="47000">
             <zone-style>
               <format attr="margin" value="10" />
               <format attr="border-style" value="none" />
             </zone-style>
           </zone>
-          <zone id="3" name="02 — Density versus chord frequency" x="51000" y="15000" w="47500" h="38000">
+          <zone id="3" name="02 — Density versus chord frequency" x="51000" y="11000" w="47500" h="47000">
             <zone-style>
               <format attr="margin" value="10" />
               <format attr="border-style" value="none" />
             </zone-style>
           </zone>
-          <zone id="4" name="03 — Technical profiles" x="1500" y="55000" w="97000" h="35000">
+          <zone id="4" name="03 — Technical profiles" x="1500" y="60000" w="97000" h="31000">
             <zone-style>
               <format attr="margin" value="10" />
               <format attr="border-style" value="none" />
@@ -316,7 +330,7 @@
           </zone>
           <zone id="5" type-v2="text" x="1500" y="92000" w="97000" h="6500">
             <formatted-text>
-              <run fontname="Avenir Next" fontsize="10">Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project / Erik Sandberg, public domain.</run>
+              <run fontname="Avenir Next" fontsize="10">Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project; individual attribution and licenses in the source data.</run>
             </formatted-text>
           </zone>
         </zone>

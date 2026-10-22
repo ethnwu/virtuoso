@@ -1,0 +1,102 @@
+[
+  {
+    "source_id": "bach1041",
+    "mutopia_id": 2051,
+    "download_url": "https://www.mutopiaproject.org/ftp/BachJS/BWV1041/bach-bwv1041-part-violin-solo/bach-bwv1041-part-violin-solo-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2051",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Federico Bruni and Javier Ruiz-Alma",
+    "sha256": "7a82e24851500010edea96f3fe65500631c8604143493779cbeed68ada22ad10",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "source_id": "bach1042",
+    "mutopia_id": 29,
+    "download_url": "https://www.mutopiaproject.org/ftp/BachJS/BWV1042/concerto-in-e-major/concerto-in-e-major-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=29",
+    "license": "Public Domain",
+    "attribution": "David Chan",
+    "sha256": "6c1d03d265be9470e2b778f776e104ee2a7e2a27fa1b19c04cc8fed40a64d072",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  },
+  {
+    "source_id": "bach1056",
+    "mutopia_id": 2116,
+    "download_url": "https://www.mutopiaproject.org/ftp/BachJS/BWV1056R/BWV1056R-Schreck/BWV1056R-Schreck-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2116",
+    "license": "Public Domain",
+    "attribution": "Júda Ronén",
+    "sha256": "4a183820275c2e3affba746a19c63e0857662a64ff2e8486992eabfa637d3b5b",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  },
+  {
+    "source_id": "beethoven1",
+    "mutopia_id": 990,
+    "download_url": "https://www.mutopiaproject.org/ftp/BeethovenLv/O61/violin_concerto_1/violin_concerto_1.mid",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=990",
+    "license": "Public Domain",
+    "attribution": "Stelios Samelis",
+    "sha256": "69fd077ebe5536528f1a6b92c51492b5b740f39bfbe77afe6389410bcb6401b1",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  },
+  {
+    "source_id": "beethoven2",
+    "mutopia_id": 1021,
+    "download_url": "https://www.mutopiaproject.org/ftp/BeethovenLv/O61/violin_concerto_2/violin_concerto_2.mid",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1021",
+    "license": "Public Domain",
+    "attribution": "Stelios Samelis",
+    "sha256": "2b2726438897d1475368206054122eab6ac3c0006275799555b55fadc08db474",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  },
+  {
+    "source_id": "beethoven3",
+    "mutopia_id": 1165,
+    "download_url": "https://www.mutopiaproject.org/ftp/BeethovenLv/O61/violin_concerto_3/violin_concerto_3.mid",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1165",
+    "license": "Public Domain",
+    "attribution": "Stelios Samelis",
+    "sha256": "f6d5ff304993ef0a4e351fe7424fda03b9fde74c0658aa4c2bb0decb682ecc2f",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  },
+  {
+    "source_id": "tchaikovsky",
+    "mutopia_id": 466,
+    "download_url": "https://www.mutopiaproject.org/ftp/TchaikovskyPI/O35/tchai_op35/tchai_op35-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=466",
+    "license": "Public Domain",
+    "attribution": "Will Oram",
+    "sha256": "cb450f2ba9ee28fb849b4810260ae847c888e33e5d264448c19fa4e95f04d9d5",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  },
+  {
+    "source_id": "rieding",
+    "mutopia_id": 1781,
+    "download_url": "https://www.mutopiaproject.org/ftp/RiedingO/O35/rieding_opus_35/rieding_opus_35-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1781",
+    "license": "CC BY 3.0",
+    "attribution": "Michael Fischer v. Mollard",
+    "sha256": "8a6965f526e743c59b8f720625f8711ad25f6e4de0e81ffbb254058827c4dd4e",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  {
+    "source_id": "telemann",
+    "mutopia_id": 2231,
+    "download_url": "https://www.mutopiaproject.org/ftp/TelemannGP/TWV51G8/concerto-8/concerto-8-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2231",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Elias Hernandis",
+    "sha256": "b96c56adc25efacf015ae8b6586d46eebbd03553d5eb32a0e6ee87cea5e9a6eb",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "source_id": "vivaldi",
+    "mutopia_id": 2048,
+    "download_url": "https://www.mutopiaproject.org/ftp/VivaldiA/O3/vivaldi-o3/vivaldi-o3-mids.zip",
+    "source_page": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2048",
+    "license": "Public Domain",
+    "attribution": "Felix Janda",
+    "sha256": "a4ada163ab57ec1541a54d0443f56bba1f1c118c357e1dcfc5e689a2f6bbf093",
+    "license_url": "https://www.mutopiaproject.org/legal.html#publicdomain"
+  }
+]

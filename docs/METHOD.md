@@ -1,33 +1,39 @@
-# Measurement and model card — version 0.1
+# Virtuoso model card — exploratory index 0.1
 
-## Unit and scope
-One movement from one source edition, solo violin only. This pilot includes all eight movements of one Bach partita. It is not a representative sample of violin repertoire. Timings and repeats reflect what is encoded in the MIDI. MIDI note events need not match notated noteheads one-for-one because ties and ornaments can be represented differently; the CSV field `Noteheads` counts encoded MIDI notes.
+## Scope and grain
+25 movements from nine source-available violin concerto works, six composers. One row is one movement's designated solo violin line. Full orchestral and piano parts are excluded. The solo line can include its own tutti passages. BWV 1056R is a reconstruction represented by its second movement only. Other works contain three source movements; this describes edition coverage, not proof of editorial correctness or completeness of every cadenza.
 
-## Feature extraction
-The analyzer merges notes on a single nonpercussion note-bearing track. It pairs each note-on to its note-off by channel and pitch. Quarter beats = (last note ending minus first note onset) in quarter-note units. Simultaneous note-on events form an onset group; onset groups are not the same as sustained polyphony. Consecutive top pitches at onset groups approximate the upper melodic line.
+The corpus is biased toward machine-readable editions available in Mutopia. It cannot establish a universal difficulty standard. There are **no independent difficulty labels** and no fitted predictive model.
 
-| Component | Raw measure | 0–100 component score | Weight |
-|---|---|---|---|
-| Density | Encoded note events / quarter beats | min(100, density / 8 × 100) | 35% |
-| Chords | Percentage of onset groups starting 2+ notes simultaneously | min(100, chord percentage / 60 × 100) | 30% |
-| Register | Percentage of encoded notes at C6 (MIDI 84) or above | min(100, high-note percentage / 50 × 100) | 20% |
-| Leaps | Mean absolute interval in semitones between consecutive highest pitches at onset groups | min(100, mean leap / 12 × 100) | 15% |
+## Feature definitions
+`Noteheads` in the CSV is a legacy name for encoded MIDI note events, not a guarantee of one-to-one correspondence with printed notes. Each note is paired with its note-off on the same channel and pitch. Quarter beats measure last note ending minus first onset; internal rests are included. Onsets group notes beginning at the exact same encoded time. Chord rate counts onset groups starting multiple notes, not every sustained overlap. Leaps follow the highest new pitch at each onset; this is only a proxy for melody or fingering.
 
-Virtuoso Index = weighted sum of these component scores. It is a 0–100 theoretical scale, not a percentile and not an exam grade. Weights and anchors are explicit design assumptions, not fitted coefficients, published standards, or expert-certified ratings. A low index does not imply a piece is easy. Do not train an ML model on this formula's own labels and claim to have validated difficulty prediction.
+| Component | Raw measure | 0–100 component | Weight |
+|---|---|---|---:|
+| Density | Note events / quarter-note span | min(100, density / 8 × 100) | 35% |
+| Chords | Percentage of simultaneous multi-note onsets | min(100, percentage / 60 × 100) | 30% |
+| Register | Percentage of note events at C6 / MIDI 84 or higher | min(100, percentage / 50 × 100) | 20% |
+| Leaps | Mean absolute upper-onset-pitch interval, semitones | min(100, mean / 12 × 100) | 15% |
 
-## Important omissions
-Tempo is deliberately absent: the source's MIDI tempi are editorial playback settings, not measured performer speeds or a consistent pedagogical standard. Notes-per-quarter is rhythmic density, not notes per second. Chords might be rolled in real performance. Ties, bowing, articulation, string crossings, position shifts, fingerings, endurance, phrasing, expressive control, and player experience are not measured. Pitch does not determine hand position without fingering context. Average features conceal short extreme passages. Register and leaps are only proxies.
+Virtuoso Index = weighted sum of the four components. Scale anchors and weights are **unvalidated design choices**, not learned coefficients or expert standards. Zero to 100 is a theoretical scale, not a percentile or grade. A low index does not establish that a piece is easy. Training a model to reproduce these formula-generated labels would not validate actual difficulty.
 
-Consequently the Sarabande can receive a higher index than a fast Double because chord frequency has a substantial weight and actual playing speed is excluded. This is a useful limitation to investigate, not proof of a real difficulty ranking.
+## Passage windows
+`passages.csv` groups note **starts** into fixed 16-quarter-note windows from the MIDI time origin, omits windows with no new notes, and records event counts and starting-note pitch bounds. These windows are not necessarily four bars and do not represent difficulty ratings or complete sustained-note occupancy. The final window can be partial. Window counts reconcile to the movement note-event totals.
 
-## Toward genuine prediction
-1. Assemble a broader licensed corpus with diverse composers, periods, and difficulty levels.
-2. Obtain independently sourced expert ratings or comparable syllabus grades. Preserve rating scheme, edition, movement versus full-work scope, and disagreements; different grading systems are not automatically interchangeable.
-3. Prefer MusicXML to retain notation details. Select the violin part; use a supported tempo assumption or ask the user for intended tempo.
-4. Add local passage features and peak demands rather than whole-piece means alone.
-5. Establish a simple baseline before fitting a supervised model. Group train/test splits by complete work and composer to reduce leakage between related movements and arrangements.
-6. Evaluate on held-out works with ordinal error, grade-distance accuracy, and honest uncertainty. Have violinists review failure cases.
-7. Only then describe outputs as learned difficulty predictions. Restrict claims to supported violin scores and identify unfamiliar inputs.
+## Important limitations
+- Editorial MIDI tempo is excluded, so density is not playing speed. A fast movement's real demand can be underestimated.
+- Long internal solo rests reduce whole-movement density; final orchestral-only time is outside the solo span.
+- Whole-movement means conceal short hard passages. Passage-level features help inspection but are not incorporated into the index yet.
+- Notation, ties, ornament realization, repeats, and source MIDI encoding affect event counts.
+- MIDI has no reliable bowing, fingering, shifting, string crossings, expressive difficulty, or player-specific experience information.
+- High pitch alone does not identify hand position. Simultaneous notes may be rolled. Upper-onset leaps do not equal required finger shifts.
+- MusicXML input currently exports only the selected part through MIDI. It does not yet use notation-specific technical features.
+- Source editions have not been compared note-for-note with printed critical editions. Source hashes and solo-part mappings establish reproducibility, not musicological infallibility.
 
-## Planned product architecture
-A small upload application parses a supported violin score, runs the Python feature pipeline/model, and displays a result with reasons. Tableau Public is a complementary, published explorer for the reference corpus and evaluation. Uploading a new score does not automatically refresh a published Tableau Public workbook or create a private user-specific session. A live Python integration needs a separate supported deployment; it is not supplied by this starter.
+## Toward prediction
+1. Expand the licensed concerto corpus and include a wider spread of composers and difficulty levels.
+2. Collect expert ratings in `data/ratings_template.csv`, preserving source, rating scheme, movement/full-work scope, edition, and uncertainty. Blank values are missing, not zero.
+3. Add local peak demands, sustained polyphony, intended tempo, and notation-aware features.
+4. Fit a simple supervised baseline once independent labels are sufficient. Use grouped train/test splits by **complete concerto**, not random movement/passage rows. Related arrangements and composer overlap require explicit evaluation.
+5. Report held-out ordinal error and grade-distance accuracy; review mistakes with violinists. Do not claim performance on unseen composers or unsupported repertoire without testing it.
+6. Deploy a separate score-upload application for live results. Tableau Public visualizes the reference corpus and evaluation; it is not an arbitrary-file upload server.
