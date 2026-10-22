@@ -5,7 +5,30 @@ let data,selected='TCHAIKOVSKY35',pieceId,current,parsed,fileName='',weights=[..
 function route(){const id=['explore','analyze','method'].includes(location.hash.slice(1))?location.hash.slice(1):'explore';document.querySelectorAll('.page').forEach(p=>p.hidden=p.id!==id);document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+id));}
 window.addEventListener('hashchange',route);
 const components=c=>'<div class="features-grid">'+c.map((v,i)=>`<div class="feature"><div class="feature-label"><span>${FEATURE_NAMES[i]}</span><span>${fmt(v)} / 100</span></div><div class="track"><div class="fill" style="width:${Math.max(0,Math.min(100,v))}%"></div></div></div>`).join('')+'</div>';
-function passages(rows){if(!rows.length)return '';const max=Math.max(...rows.map(p=>p.count));const start=rows[0].start,end=rows.at(-1).end;const byStart=new Map(rows.map(p=>[p.start,p]));let bars='';for(let s=start;s<end;s+=16){const p=byStart.get(s);bars+=`<span style="height:${p?p.count/max*100:0}%" title="Quarter beats ${s}–${s+16}: ${p?.count||0} note starts"></span>`;}return `<h4>note density</h4><div class="passage-chart" role="img" aria-label="Note starts per 16-quarter-beat window. Maximum ${max} note starts.">${bars}</div><div class="axis"><span>Quarter beat ${start}</span><span>${end}</span></div><p class="caption">Note starts per 16 quarter beats · hover to inspect a window</p>`;}
+function passages(rows){
+ if(!rows.length)return '';
+ const max=Math.max(1,...rows.map(p=>p.count));
+ const start=rows[0].start,end=rows.at(-1).end;
+ const byStart=new Map(rows.map(p=>[p.start,p]));
+ let bars='';
+ for(let s=start;s<end;s+=16){
+  const p=byStart.get(s),count=p?.count||0,windowEnd=Math.min(s+16,end);
+  const range=count&&Number.isFinite(p.low)&&Number.isFinite(p.high)?' · '+pitchName(p.low)+'–'+pitchName(p.high):'';
+  const detail='quarter beats '+s+'–'+windowEnd+' · '+count.toLocaleString()+' note starts'+range;
+  bars+=`<button type="button" class="passage-bar" style="height:${count/max*100}%" data-passage-detail="${esc(detail)}" aria-label="${esc(detail)}"></button>`;
+ }
+ return `<h4>note density</h4><div class="passage-inspector"><div class="passage-chart" role="group" aria-label="Note density by passage. Hover, focus, or tap a bar to inspect it.">${bars}</div><div class="axis"><span>quarter beat ${start}</span><span>${end}</span></div><p class="caption passage-detail" aria-live="polite" aria-atomic="true">hover, focus, or tap a bar to inspect a window</p></div>`;
+}
+function inspectPassage(event){
+ const bar=event.target.closest?.('[data-passage-detail]');
+ if(!bar)return;
+ const inspector=bar.closest('.passage-inspector');
+ inspector.querySelectorAll('.passage-bar').forEach(item=>item.classList.toggle('is-inspected',item===bar));
+ const detail=inspector.querySelector('.passage-detail');
+ detail.textContent=bar.dataset.passageDetail;
+ detail.classList.add('has-selection');
+}
+for(const event of ['pointerover','focusin','click'])document.addEventListener(event,inspectPassage);
 function ratingHTML(r){return `<div class="rating"><strong>${esc(r.scheme)} · ${esc(r.value||r.rating)}</strong><small>Scope: ${esc(r.scope)}${r.pieceIds?.length?' · '+r.pieceIds.map(esc).join(', '):''}</small>${r.conditions?`<small>${esc(r.conditions)}</small>`:''}<a href="${link(r.source)}" target="_blank" rel="noopener">Published source ↗</a> <small>${esc(r.locator)}</small></div>`;}
 function renderList(){const q=$('#search').value.toLowerCase(),status=$('#status').value;const works=data.works.filter(w=>(status==='all'||w.status===status)&&[w.title,w.composer].join(' ').toLowerCase().includes(q));$('#list-count').textContent=works.length+' matches';$('#work-list').innerHTML='<select id="work-select" aria-label="concerto"><option value="">select a concerto</option>'+works.map(w=>`<option value="${esc(w.id)}" ${w.id===selected?'selected':''}>${esc(w.composer)} / ${esc(w.title)}</option>`).join('')+'</select>';$('#work-select').onchange=e=>{if(e.target.value){selected=e.target.value;pieceId=null;renderWork();}};}
 function renderWork(){const w=data.works.find(w=>w.id===selected)||data.works[0];selected=w.id;renderList();const p=data.pieces.filter(p=>p.workId===w.id);let body=`<span class="badge">${w.status==='analyzed'?'score analyzed':'catalogue only'}</span><p class="composer">${esc(w.composer)}</p><h3>${esc(w.title)}</h3>`;
