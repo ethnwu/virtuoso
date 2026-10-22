@@ -20,7 +20,7 @@ w=E.Element('workbook',{'original-version':'18.1','source-build':'2024.1.0 (2024
 sub(w,'document-format-change-manifest')
 prefs=sub(w,'preferences');sub(prefs,'preference',name='ui.encoding.shelf.height',value='24')
 dss=sub(w,'datasources');fields={}
-for name,file in [('pieces','pieces.csv'),('features','features.csv')]:
+for name,file in [('pieces','pieces.csv'),('features','features.csv'),('ratings','ratings_tableau.csv')]:
     with (ROOT/'data'/file).open() as f: fields[name]=next(csv.reader(f))
     ds=sub(dss,'datasource',caption='Virtuoso — '+name,inline='true',name=name,version='18.1')
     conn=sub(ds,'connection',class_='textscan',directory='Data',filename=file,**{'password':'','server':'','textscan-character-set':'UTF-8','textscan-locale':'en_US','textscan-sort-as-text':'true','version':'9.3'})
@@ -56,6 +56,7 @@ sheet('01 — Technical demand index','pieces',['Piece'],['Virtuoso Index'],'Bar
 sheet('02 — Density versus chord frequency','pieces',['Chord Onsets Pct'],['Notes per Quarter'],'Circle',[('lod','Piece'),('text','Piece'),('size','Virtuoso Index')])
 sheet('03 — Technical profiles','features',['Piece'],['Feature'],'Square',[('color','Feature Score'),('text','Feature Score')])
 sheet('04 — Pitch range','pieces',['Piece'],['Highest MIDI'],'Bar',[('text','Highest MIDI')])
+sheet('05 — Published ratings','ratings',['Scheme','Target'],[],'Text',[('text','Rating Label')])
 dashboards=sub(w,'dashboards');d=sub(dashboards,'dashboard',name='Virtuoso');sub(d,'style');sub(d,'size',maxheight=1500,maxwidth=1600,minheight=1500,minwidth=1600)
 zones=sub(d,'zones');root=sub(zones,'zone',id=0,type__v2='layout-basic',x=0,y=0,w=100000,h=100000)
 tz=sub(root,'zone',id=1,type__v2='text',x=1500,y=1000,w=97000,h=8500)
@@ -67,7 +68,7 @@ tz=sub(root,'zone',id=5,type__v2='text',x=1500,y=92000,w=97000,h=6500)
 ft=sub(tz,'formatted-text');sub(ft,'run','Index: 35% density + 30% chords + 20% high register + 15% leaps. Weights and scale anchors are provisional. Tempo, bowing, fingering, musicality, and performer validation are not included. Source: Mutopia Project; individual attribution and licenses in the source data.',fontname='Avenir Next',fontsize=10)
 sub(d,'simple-id',uuid='{'+str(uuid.uuid5(uuid.NAMESPACE_URL,'virtuoso/dashboard')).upper()+'}')
 wins=sub(w,'windows',**{'saved-dpi-scale-factor':'1.0','source-height':'1000'})
-for name in ['01 — Technical demand index','02 — Density versus chord frequency','03 — Technical profiles','04 — Pitch range']:
+for name in ['01 — Technical demand index','02 — Density versus chord frequency','03 — Technical profiles','04 — Pitch range','05 — Published ratings']:
     win=sub(wins,'window',class_='worksheet',name=name);sub(win,'viewpoint',name=name).append(E.Element('zoom',{'type':'entire-view'}))
 win=sub(wins,'window',class_='dashboard',name='Virtuoso');vps=sub(win,'viewpoints')
 for name in ['01 — Technical demand index','02 — Density versus chord frequency','03 — Technical profiles']:
@@ -77,13 +78,13 @@ E.indent(w)
 out=ROOT/'tableau';out.mkdir(exist_ok=True)
 p=out/'Virtuoso.twb';E.ElementTree(w).write(p,encoding='utf-8',xml_declaration=True)
 (out/'Data').mkdir(exist_ok=True)
-for f in ['pieces.csv','features.csv']: shutil.copy(ROOT/'data'/f,out/'Data'/f)
+for f in ['pieces.csv','features.csv','ratings_tableau.csv']: shutil.copy(ROOT/'data'/f,out/'Data'/f)
 with zipfile.ZipFile(out/'Virtuoso.twbx','w',zipfile.ZIP_DEFLATED) as z:
     z.write(p,'Virtuoso.twb')
-    for f in ['pieces.csv','features.csv']: z.write(ROOT/'data'/f,'Data/'+f)
+    for f in ['pieces.csv','features.csv','ratings_tableau.csv']: z.write(ROOT/'data'/f,'Data/'+f)
 # Structural checks do not substitute for Tableau application rendering.
-parsed=E.parse(p);assert len(parsed.findall('.//worksheet'))==4
+parsed=E.parse(p);assert len(parsed.findall('.//worksheet'))==5
 for ds in parsed.findall('./datasources/datasource'):
     f=ds.find('connection').get('filename');assert (out/'Data'/f).exists()
 with zipfile.ZipFile(out/'Virtuoso.twbx') as z: assert z.testzip() is None
-print('Created TWB + TWBX; XML, CSV paths, four worksheets and ZIP integrity checked.')
+print('Created TWB + TWBX; XML, CSV paths, five worksheets and ZIP integrity checked.')

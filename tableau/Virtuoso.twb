@@ -93,6 +93,36 @@
       <column name="[Weighted Contribution]" datatype="real" role="measure" type="quantitative" default-format="n0.0" />
       <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
     </datasource>
+    <datasource caption="Virtuoso — ratings" inline="true" name="ratings" version="18.1">
+      <connection class="textscan" directory="Data" filename="ratings_tableau.csv" password="" server="" textscan-character-set="UTF-8" textscan-locale="en_US" textscan-sort-as-text="true" version="9.3">
+        <relation name="ratings_tableau.csv" table="[ratings_tableau.csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," width="0">
+            <column name="Rating ID" datatype="string" ordinal="0" />
+            <column name="Scheme" datatype="string" ordinal="1" />
+            <column name="Target" datatype="string" ordinal="2" />
+            <column name="Rating Label" datatype="string" ordinal="3" />
+            <column name="Scope" datatype="string" ordinal="4" />
+            <column name="Composer" datatype="string" ordinal="5" />
+            <column name="Source URL" datatype="string" ordinal="6" />
+            <column name="Source Locator" datatype="string" ordinal="7" />
+            <column name="Review Status" datatype="string" ordinal="8" />
+            <column name="Performance Conditions" datatype="string" ordinal="9" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column name="[Rating ID]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Scheme]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Target]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Rating Label]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Scope]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Composer]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Source URL]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Source Locator]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Review Status]" datatype="string" role="dimension" type="nominal" />
+      <column name="[Performance Conditions]" datatype="string" role="dimension" type="nominal" />
+      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+    </datasource>
   </datasources>
   <worksheets>
     <worksheet name="01 — Technical demand index">
@@ -296,6 +326,56 @@
       </table>
       <simple-id uuid="{F97F6EAB-51AA-5AE8-B8D9-E8D43A2BBC20}" />
     </worksheet>
+    <worksheet name="05 — Published ratings">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Avenir Next" fontsize="14" bold="true">05 — Published ratings</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Virtuoso — ratings" name="ratings" />
+          </datasources>
+          <datasource-dependencies datasource="ratings">
+            <column name="[Scheme]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Target]" datatype="string" role="dimension" type="nominal" />
+            <column name="[Rating Label]" datatype="string" role="dimension" type="nominal" />
+            <column-instance column="[Scheme]" derivation="None" name="[none:Scheme:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Target]" derivation="None" name="[none:Target:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Rating Label]" derivation="None" name="[none:Rating Label:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="worksheet">
+            <format attr="background-color" value="#fbf8f1" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[ratings].[none:Rating Label:nk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#97602e" />
+                <format attr="mark-labels-show" value="true" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[ratings].[none:Scheme:nk] / [ratings].[none:Target:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid="{E781EFED-1FF2-59CE-ACE9-4EB3C7AD248B}" />
+    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard name="Virtuoso">
@@ -356,6 +436,11 @@
     </window>
     <window class="worksheet" name="04 — Pitch range">
       <viewpoint name="04 — Pitch range">
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="05 — Published ratings">
+      <viewpoint name="05 — Published ratings">
         <zoom type="entire-view" />
       </viewpoint>
     </window>

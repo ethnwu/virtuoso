@@ -1,0 +1,44 @@
+{
+  "source_verified_records": 22,
+  "provider_count": 4,
+  "works_with_any_label": 8,
+  "work_scope_records": 8,
+  "movement_scope_records": 13,
+  "group_scope_records": 1,
+  "movements_with_specific_source_placements": 12,
+  "numeric_movement_candidate_rows": 9,
+  "schemes": {
+    "ABRSM violin grades 2020\u20132023": {
+      "candidate_rows": 1,
+      "independent_works": 1,
+      "targets": [
+        3
+      ]
+    },
+    "ABRSM violin grades from 2024": {
+      "candidate_rows": 2,
+      "independent_works": 2,
+      "targets": [
+        8
+      ]
+    },
+    "RCM violin levels 2021": {
+      "candidate_rows": 6,
+      "independent_works": 4,
+      "targets": [
+        4,
+        6,
+        8,
+        9
+      ]
+    }
+  },
+  "trained_model": false,
+  "training_ready": false,
+  "blockers": [
+    "Small number of independent concerto works per scheme",
+    "Source edition differences still need review",
+    "Arrangement and cadenza mismatches held out",
+    "No cross-provider conversion or label inheritance permitted"
+  ]
+}

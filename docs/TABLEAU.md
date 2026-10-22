@@ -1,7 +1,7 @@
 # Tableau build and portfolio guide
 
 ## Generated starter
-Open `tableau/Virtuoso.twbx` in Tableau Public on Mac. This starter contains a landscape dashboard and four editable worksheets. Application-level opening and rendering have not been verified here. The standalone `.twb` uses the two adjacent CSV sources in `tableau/Data`.
+Open `tableau/Virtuoso.twbx` in Tableau Public on Mac. This starter contains a landscape dashboard and five editable worksheets. Application-level opening and rendering have not been verified here. The standalone `.twb` uses the two adjacent CSV sources in `tableau/Data`.
 
 ## Reliable manual fallback or rebuild
 Connect to `data/pieces.csv` as a text file. Treat Piece ID, Piece, Composer, Work, Source URL, License, and Model Version as dimensions. Keep Movement Order as a dimension when sorting.
@@ -24,3 +24,6 @@ Once you have reviewed the workbook in Tableau:
 
 ## Suggested project introduction
 Virtuoso analyzes the technical demands of violin concertos. Its first concerto corpus extracts rhythmic density, simultaneous-note frequency, register, and melodic intervals from 25 movements across nine works. An explainable experimental index makes its assumptions visible, while Tableau lets visitors compare technical profiles. A Python tool also analyzes selected violin parts from new MIDI or MusicXML scores. Difficulty prediction against independent expert ratings is future work.
+
+## Published ratings
+Worksheet 05 uses `ratings_tableau.csv` as a separate source. It shows the original scheme, rating, and target scope. Keep it separate from musical feature sums. There is no conversion between Henle, ABRSM, RCM, or diploma codes. `Source Verified` is not training approval; see `docs/RATINGS.md`.

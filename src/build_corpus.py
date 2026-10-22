@@ -54,7 +54,11 @@ def main():
     assert len({r['Piece ID'] for r in rows})==len(rows)
     assert sum(w['Note Events'] for w in windows)==len(events)
     assert all(r['Lowest MIDI']>=55 and r['Highest MIDI']<=108 for r in rows),'Unexpected violin register; inspect selected part'
-    summary={'works':len(works),'movements':len(rows),'composers':len({r['Composer'] for r in rows}),'note_events':len(events),'passage_windows':len(windows),'expert_ratings_available':0,'model_status':'Rules-based index; no trained difficulty predictor','checks':['Unique movement IDs','Archive SHA-256 matches','Explicit solo-track names and note counts match source manifest','Violin pitch bounds','Score recomputation and range','Passage counts reconcile'],'solo_track_audit':audit,'coverage_by_composer':dict(Counter(r['Composer'] for r in rows))}
+    summary={'works':len(works),'movements':len(rows),'composers':len({r['Composer'] for r in rows}),'note_events':len(events),'passage_windows':len(windows),'published_rating_records':len(list(csv.DictReader((ROOT/'data/ratings.csv').open()))) if (ROOT/'data/ratings.csv').exists() else 0,'training_approved_labels':0,'model_status':'Rules-based index; no trained difficulty predictor','checks':['Unique movement IDs','Archive SHA-256 matches','Explicit solo-track names and note counts match source manifest','Violin pitch bounds','Score recomputation and range','Passage counts reconcile'],'solo_track_audit':audit,'coverage_by_composer':dict(Counter(r['Composer'] for r in rows))}
     (ROOT/'data/validation.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
     print(json.dumps({k:v for k,v in summary.items() if k!='solo_track_audit'},indent=2))
-if __name__=='__main__':main()
+if __name__=='__main__':
+    main()
+    if (ROOT/'data/ratings.csv').exists():
+        from build_ratings import main as build_ratings
+        build_ratings()

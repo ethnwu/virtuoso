@@ -25,7 +25,7 @@ These are source-available scores, not a representative sample of every violin c
 - New-file analysis for MIDI, MusicXML, and compressed MusicXML; explicit violin-part selection for multi-part files.
 - Packaged Tableau starter with rankings, feature profiles, and comparison views.
 
-**The index is a transparent formula, not a trained difficulty predictor or exam grade.** There are currently zero independent difficulty labels. Predictive training and evaluation are not complete. No upload website is deployed.
+**The index is a transparent formula, not a trained difficulty predictor or exam grade.** There are now 22 published rating/placement records across eight works, kept separate by provider and scope. Nine numeric movement candidates remain after scope/arrangement exclusions, all pending edition review. Predictive training and evaluation are not complete. No upload website is deployed.
 
 ## Run on Mac
 
@@ -34,6 +34,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python src/build_corpus.py
+python src/build_ratings.py
 python src/build_workbook.py
 python -m unittest discover -s tests -v
 ```
@@ -63,7 +64,11 @@ Publish a reviewed dashboard to Tableau Public and embed it in your existing por
 - `data/passages.csv`: 660 occupied 16-quarter-note onset windows.
 - `data/sources.json`: download URLs, archive hashes, licenses, and credits.
 - `data/concerto_manifest.json`: exact source members and verified solo tracks.
-- `data/ratings_template.csv`: blank expert-label collection sheet; not training labels.
+- `data/ratings.csv`: curated source-verified ratings, with scope and edition conditions.
+- `data/ratings_tableau.csv`: a separate published-ratings source for Tableau.
+- `data/movement_rating_candidates.csv`: nine numeric candidates, not approved training examples.
+- `data/ratings_template.csv`: optional manual collection sheet.
+- `docs/RATINGS.md`: findings, sources, and next collection priorities.
 - `data/validation.json`: checks, counts, and solo-track audit.
 - `docs/METHOD.md`: index definitions, limitations, and the prediction roadmap.
 

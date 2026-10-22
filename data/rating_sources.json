@@ -1,0 +1,92 @@
+[
+  {
+    "source_id": "henle_bach_a",
+    "provider": "G. Henle Verlag",
+    "url": "https://www.henle.de/de/Violinkonzert-a-moll-BWV-1041/HN-671",
+    "edition": "Live publisher catalogue",
+    "retrieved": "2026-10-22",
+    "source_type": "publisher_rating",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "henle_bach_e",
+    "provider": "G. Henle Verlag",
+    "url": "https://www.henle.de/us/Violin-Concerto-E-major-BWV-1042/HN-670",
+    "edition": "Live publisher catalogue",
+    "retrieved": "2026-10-22",
+    "source_type": "publisher_rating",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "henle_beethoven",
+    "provider": "G. Henle Verlag",
+    "url": "https://www.henle.de/en/Violin-Concerto-D-major-op.-61/HN-326",
+    "edition": "Live publisher catalogue",
+    "retrieved": "2026-10-22",
+    "source_type": "publisher_rating",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "henle_tchaikovsky",
+    "provider": "G. Henle Verlag",
+    "url": "https://www.henle.de/en/Violin-Concerto-D-major-op.-35/HN-685",
+    "edition": "Live publisher catalogue",
+    "retrieved": "2026-10-22",
+    "source_type": "publisher_rating",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "henle_scale",
+    "provider": "G. Henle Verlag",
+    "url": "https://www.henle.de/us/Levels-of-Difficulty/",
+    "edition": "Live publisher catalogue",
+    "retrieved": "2026-10-22",
+    "source_type": "publisher_rating",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "abrsm2024",
+    "provider": "ABRSM",
+    "url": "https://www.abrsm.org/sites/default/files/2023-10/performance-grades-qual-spec-bowed-strings-2024-20230605-v2.pdf",
+    "edition": "from 2024",
+    "retrieved": "2026-10-22",
+    "source_type": "official_syllabus",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "abrsm2020",
+    "provider": "ABRSM",
+    "url": "https://www.abrsm.org/sites/default/files/2023-08/violin-practical-grades-initial-8-2020-2023-august-2021-update.pdf",
+    "edition": "2020–2023, August 2021 update",
+    "retrieved": "2026-10-22",
+    "source_type": "official_syllabus",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "rcm2021",
+    "provider": "The Royal Conservatory of Music",
+    "url": "https://rcmusic-kentico-cdn.s3.amazonaws.com/rcm/media/main/documents/examinations/s50_violin-syllabus-2021_online_f.pdf",
+    "edition": "2021",
+    "retrieved": "2026-10-22",
+    "source_type": "official_syllabus",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  },
+  {
+    "source_id": "trinity2026",
+    "provider": "Trinity College London",
+    "url": "https://www.trinitycollege.com/resource/?id=8555",
+    "edition": "2026",
+    "retrieved": "2026-10-22",
+    "source_type": "official_syllabus",
+    "instrument": "violin",
+    "document_saved_in_repo": false
+  }
+]

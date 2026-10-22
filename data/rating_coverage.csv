@@ -1,0 +1,26 @@
+Piece ID,Work ID,Piece,Movement Placement IDs,Group Placement IDs,Work Context IDs,Status
+RV310-1,RV310,Antonio Vivaldi · RV310 · 1. Movement 1,R012,,,movement placement found
+RV310-2,RV310,Antonio Vivaldi · RV310 · 2. Movement 2,,,,no matched source found
+RV310-3,RV310,Antonio Vivaldi · RV310 · 3. Movement 3,,,,no matched source found
+RV356-1,RV356,Antonio Vivaldi · RV356 · 1. Movement 1,R010,,,movement placement found
+RV356-2,RV356,Antonio Vivaldi · RV356 · 2. Movement 2,,,,no matched source found
+RV356-3,RV356,Antonio Vivaldi · RV356 · 3. Movement 3,R011,,,movement placement found
+TWV51G8-1,TWV51G8,Georg Philipp Telemann · TWV51G8 · 1. Movement 1,R013,,,movement placement found
+TWV51G8-2,TWV51G8,Georg Philipp Telemann · TWV51G8 · 2. Movement 2,,,,no matched source found
+TWV51G8-3,TWV51G8,Georg Philipp Telemann · TWV51G8 · 3. Movement 3,,,,no matched source found
+BWV1041-1,BWV1041,J. S. Bach · BWV1041 · 1. Allegro,R005|R014,,R001,movement placement found
+BWV1041-2,BWV1041,J. S. Bach · BWV1041 · 2. Andante,,,R001,whole-work context only
+BWV1041-3,BWV1041,J. S. Bach · BWV1041 · 3. Allegro assai,,,R001,whole-work context only
+BWV1042-1,BWV1042,J. S. Bach · BWV1042 · 1. Movement 1,R015,,R002|R020,movement placement found
+BWV1042-2,BWV1042,J. S. Bach · BWV1042 · 2. Movement 2,,R016,R002|R020,group context only
+BWV1042-3,BWV1042,J. S. Bach · BWV1042 · 3. Movement 3,,R016,R002|R020,group context only
+BWV1056R-2,BWV1056R,J. S. Bach · BWV1056R · 2. Largo,,,,no matched source found
+BEETHOVEN61-1,BEETHOVEN61,Ludwig van Beethoven · BEETHOVEN61 · 1. Movement 1,R021,,R003|R018,movement placement found
+BEETHOVEN61-2,BEETHOVEN61,Ludwig van Beethoven · BEETHOVEN61 · 2. Movement 2,,,R003|R018,whole-work context only
+BEETHOVEN61-3,BEETHOVEN61,Ludwig van Beethoven · BEETHOVEN61 · 3. Movement 3,,,R003|R018,whole-work context only
+RIEDING35-1,RIEDING35,Oskar Rieding · RIEDING35 · 1. Movement 1,R008,,,movement placement found
+RIEDING35-2,RIEDING35,Oskar Rieding · RIEDING35 · 2. Movement 2,R007,,,movement placement found
+RIEDING35-3,RIEDING35,Oskar Rieding · RIEDING35 · 3. Movement 3,R009,,,movement placement found
+TCHAIKOVSKY35-1,TCHAIKOVSKY35,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 1. Allegro moderato,R017,,R004|R019|R022,movement placement found
+TCHAIKOVSKY35-2,TCHAIKOVSKY35,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 2. Canzonetta,R006,,R004|R019|R022,movement placement found
+TCHAIKOVSKY35-3,TCHAIKOVSKY35,Pyotr Ilyich Tchaikovsky · TCHAIKOVSKY35 · 3. Finale,,,R004|R019|R022,whole-work context only

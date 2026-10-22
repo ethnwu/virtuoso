@@ -1,0 +1,10 @@
+Rating ID,Piece ID,Work ID,Composer,Scheme,Target,Review Status,Historical Syllabus,Notes per Quarter,Chord Onsets Pct,High Notes Pct,Mean Leap Semitones,Lowest MIDI,Highest MIDI,Quarter Beats,Noteheads,Onsets
+R005,BWV1041-1,BWV1041,J. S. Bach,ABRSM violin grades from 2024,8,edition comparison pending,false,3.1462,0.0,3.5316,3.2195,56,88,342.0,1076,1076
+R006,TCHAIKOVSKY35-2,TCHAIKOVSKY35,Pyotr Ilyich Tchaikovsky,ABRSM violin grades from 2024,8,edition comparison pending,false,1.6687,0.0,5.2632,2.9017,55,94,250.5,418,418
+R007,RIEDING35-2,RIEDING35,Oskar Rieding,ABRSM violin grades 2020–2023,3,edition comparison pending,true,1.2899,0.0,0.0,2.6102,55,83,138.0,178,178
+R008,RIEDING35-1,RIEDING35,Oskar Rieding,RCM violin levels 2021,4,edition comparison pending,false,1.1094,0.0,0.0,2.7316,55,83,320.0,355,355
+R009,RIEDING35-3,RIEDING35,Oskar Rieding,RCM violin levels 2021,4,edition comparison pending,false,2.0682,0.1377,0.0,2.2386,58,83,352.0,728,726
+R010,RV356-1,RV356,Antonio Vivaldi,RCM violin levels 2021,6,edition comparison pending,false,2.7925,0.0,3.4637,3.4441,55,86,320.5,895,895
+R011,RV356-3,RV356,Antonio Vivaldi,RCM violin levels 2021,6,edition comparison pending,false,2.6874,0.0,9.2545,2.9048,62,88,289.5,778,778
+R014,BWV1041-1,BWV1041,J. S. Bach,RCM violin levels 2021,8,edition comparison pending,false,3.1462,0.0,3.5316,3.2195,56,88,342.0,1076,1076
+R015,BWV1042-1,BWV1042,J. S. Bach,RCM violin levels 2021,9,edition comparison pending,false,3.5324,1.1542,2.0367,3.5093,56,88,695.0,2455,2426

@@ -4,7 +4,6 @@
   "composers": 6,
   "note_events": 28108,
   "passage_windows": 660,
-  "expert_ratings_available": 0,
   "model_status": "Rules-based index; no trained difficulty predictor",
   "checks": [
     "Unique movement IDs",
@@ -248,5 +247,7 @@
     "Ludwig van Beethoven": 3,
     "Oskar Rieding": 3,
     "Pyotr Ilyich Tchaikovsky": 3
-  }
+  },
+  "published_rating_records": 22,
+  "training_approved_labels": 0
 }
